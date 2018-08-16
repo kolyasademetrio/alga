@@ -1,0 +1,4 @@
+[26-Jul-2018 09:59:55 UTC] PHP Fatal error:  Call to undefined function x_get_cart_link() in /home/seotmdev/seocms.com.ua/alga/wp-content/themes/twentyfifteen/header.php on line 65
+[26-Jul-2018 10:00:00 UTC] PHP Fatal error:  Call to undefined function x_get_cart_link() in /home/seotmdev/seocms.com.ua/alga/wp-content/themes/twentyfifteen/header.php on line 65
+[26-Jul-2018 10:00:01 UTC] PHP Fatal error:  Call to undefined function x_get_cart_link() in /home/seotmdev/seocms.com.ua/alga/wp-content/themes/twentyfifteen/header.php on line 65
+[26-Jul-2018 10:00:57 UTC] PHP Fatal error:  Call to undefined function x_get_cart_link() in /home/seotmdev/seocms.com.ua/alga/wp-content/themes/twentyfifteen/header.php on line 65
