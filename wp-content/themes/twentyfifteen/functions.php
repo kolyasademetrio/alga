@@ -453,6 +453,9 @@ function custom_scripts() {
 	// Load magnific-popup stylesheet
 	wp_register_style('magnific-popup', get_template_directory_uri() . '/plugins/magnific-popup/magnific-popup.css');
 	wp_enqueue_style('magnific-popup');
+	// Load datetimepicker stylesheet
+	wp_register_style('datetimepicker-css', get_template_directory_uri() . '/plugins/datetimepicker/jquery.datetimepicker.min.css');
+	wp_enqueue_style('datetimepicker-css');
 	if (  is_page_template('page-templates/error-template.php') || is_page_template('page-templates/thx-template.php') ) {
 		wp_register_style('thx-error-style', get_template_directory_uri() . '/css/thx-error-style.css');
 		wp_enqueue_style('thx-error-style');
@@ -473,12 +476,22 @@ function custom_scripts() {
 	wp_enqueue_script('magnific-popup-js');
 	wp_register_script('maskedinput-js', get_template_directory_uri() . '/plugins/maskedinput/jquery.maskedinput.min.js', array('jquery'), NULL, true);
 	wp_enqueue_script('maskedinput-js');
+	wp_register_script('nicescroll-js', get_template_directory_uri() . '/plugins/niceScroll/niceScroll.js', array('jquery'), NULL, true);
+	wp_enqueue_script('nicescroll-js');
+	wp_register_script('datetimepicker-js', get_template_directory_uri() . '/plugins/datetimepicker/jquery.datetimepicker.full.js', array('jquery'), NULL, true);
+	wp_enqueue_script('datetimepicker-js');
 	wp_register_script('custom-js', get_template_directory_uri() . '/js/custom-js/custom.js', array('jquery'), NULL, true);
 	wp_enqueue_script('custom-js');
 	wp_register_script('init-js', get_template_directory_uri() . '/js/custom-js/init.js', array('jquery'), NULL, true);
 	wp_enqueue_script('init-js');
+	wp_enqueue_script('wc-cart');
 }
 add_action( 'wp_enqueue_scripts', 'custom_scripts' );
+
+function admin_style() {
+	wp_enqueue_style('admin-styles', get_template_directory_uri().'/css/custom-css/custom-admin.css');
+}
+add_action('admin_enqueue_scripts', 'admin_style');
 /* ==============================================================================================
 ============================ Подключение скриптов и стилей End ==================================
 ================================================================================================*/
@@ -527,135 +540,6 @@ function my_cfs_options_screens( $screens ) {
 	первый параметр - $screens['name'] - ( массива $screens с ключем name ) */
 /* ==============================================================================================
 ============================= Плагин my_cfs_options_screens End =================================
-================================================================================================*/
-
-
-
-
-
-/* ==============================================================================================
-======================================= Создание виджета ========================================
-================================================================================================*/
-function my_widgets_init() {
-	/* header_logo_sidebar */
-	register_sidebar( array(
-		'name' => __( 'Logo Sidebar', 'header_logo_sidebar' ),
-		'id' => 'header_logo_sidebar',
-	) );
-
-	/* header_phone_sidebar */
-	register_sidebar( array(
-		'name' => __( 'Phone Sidebar', 'header_phone_sidebar' ),
-		'id' => 'header_phone_sidebar',
-	) );
-
-	/* header_menu_sidebar */
-	register_sidebar( array(
-		'name' => __( 'Menu Sidebar', 'header_menu_sidebar' ),
-		'id' => 'header_menu_sidebar',
-	) );
-
-	/* header_auth_sidebar */
-	register_sidebar( array(
-		'name' => __( 'Auth Button text Sidebar', 'header_auth_sidebar' ),
-		'id' => 'header_auth_sidebar',
-	) );
-
-	/* header_menu_social_sidebar */
-	register_sidebar( array(
-		'name' => __( 'Menu Social Sidebar', 'header_menu_social_sidebar' ),
-		'id' => 'header_menu_social_sidebar',
-	) );
-
-	/* header_lang_switcher_sidebar */
-	register_sidebar( array(
-		'name' => __( 'Lang Switcher Sidebar', 'header_lang_switcher_sidebar' ),
-		'id' => 'header_lang_switcher_sidebar',
-	) );
-
-	/* header_try_free_sidebar */
-	register_sidebar( array(
-		'name' => __( 'Try Sidebar', 'header_try_free_sidebar' ),
-		'id' => 'header_try_free_sidebar',
-	) );
-
-	/* header_hamburger_sidebar */
-	register_sidebar( array(
-		'name' => __( 'Hamburger Sidebar', 'header_hamburger_sidebar' ),
-		'id' => 'header_hamburger_sidebar',
-	) );
-}
-add_action( 'widgets_init', 'my_widgets_init' );
-
-
-
-
-
-// Register and load the widget
-function wpb_load_widget() {
-	register_widget( 'header_logo_widget' );
-}
-add_action( 'widgets_init', 'wpb_load_widget' );
-
-
-
-// Creating the widget
-class header_logo_widget extends WP_Widget {
-
-	function __construct() {
-		parent::__construct(
-
-			'header_widget',
-			__('Виджет для лого шапки сайта', 'header_widget_domain'),
-
-			array( 'description' => __( 'Виджет для лого шапки сайта', 'header_widget_domain' ), )
-		);
-	}
-
-// Creating widget front-end
-
-	public function widget( $args, $instance ) {
-		$title = apply_filters( 'widget_title', $instance['title'] );
-
-		if ( ! empty( $title ) ) {
-			echo '<div class="header__logoWrap">
-						<a href="' . esc_url(home_url("/")) . '" class="header__logoLink">
-							<img src="' . $title . '" alt="" class="header__logoImg">
-						</a>
-					</div>';
-		}
-
-
-
-// This is where you run the code and display the output
-	}
-
-// Widget Backend
-	public function form( $instance ) {
-		if ( isset( $instance[ 'title' ] ) ) {
-			$title = $instance[ 'title' ];
-		}
-		else {
-			$title = __( 'New title', 'wpb_widget_domain' );
-		}
-// Widget admin form
-		?>
-		<p>
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
-			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
-		</p>
-		<?php
-	}
-
-// Updating widget replacing old instances with new
-	public function update( $new_instance, $old_instance ) {
-		$instance = array();
-		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
-		return $instance;
-	}
-} // Class wpb_widget ends here
-/* ==============================================================================================
-========================================== Создание виджета End =================================
 ================================================================================================*/
 
 
@@ -834,11 +718,8 @@ add_action( 'init', 'create_posttype' );
 ================================ Хлебные крошки (breadcrumbs) ===================================
 ================================================================================================*/
 
-
 //это вставить в месте где выводятся хлебные крошки
 //if( function_exists('kama_breadcrumbs') ) kama_breadcrumbs(' / ');
-
-
 /**
  * Хлебные крошки (breadcrumbs)
  *
@@ -1298,6 +1179,28 @@ function custom_checkout_fields( $fields ) {
 	);
 	/* Поле Время доставки End */
 
+	/* Поле Добавить комментарий к заказу */
+	$fields['billing']['order_comments'] = array(
+		'type' => 'textarea',
+		'label' => __('Добавить комментарий к заказу', 'woocommerce'),
+		'placeholder' => '',
+		'required' => false,
+		'class' => array(''),
+		'clear' => true
+	);
+	/* Поле Добавить комментарий к заказу End */
+
+	/* Поле Добавить комментарий к заказу */
+	$fields['billing']['order_feedback_allow'] = array(
+		'type' => 'checkbox',
+		'label' => __('Мне можно не звонить для подтверждения заказа', 'woocommerce'),
+		'placeholder' => '',
+		'required' => false,
+		'class' => array(''),
+		'clear' => true
+	);
+	/* Поле Добавить комментарий к заказу End */
+
 	/* Поле Варианты оплаты */
 	if ( WC()->cart->needs_payment() ) {
 		$available_gateways = WC()->payment_gateways->get_available_payment_gateways();
@@ -1346,6 +1249,12 @@ function billing_apartment_update_order_meta( $order_id ) {
 	if ( ! empty( $_POST['shipping_date'] ) ) {
 		update_post_meta( $order_id, 'shipping_date', sanitize_text_field( $_POST['shipping_date'] ) );
 	}
+	if ( ! empty( $_POST['order_comments'] ) ) {
+		update_post_meta( $order_id, 'order_comments', sanitize_text_field( $_POST['order_comments'] ) );
+	}
+	if ( ! empty( $_POST['order_feedback_allow'] ) ) {
+		update_post_meta( $order_id, 'order_feedback_allow', sanitize_text_field( $_POST['order_feedback_allow'] ) );
+	}
 
 	/*Поле Варианты оплаты проверить сохраняется ли*/
 }
@@ -1387,15 +1296,64 @@ function custom_field_display_admin_order_meta($order){
 	global $woocommerce, $post;
 	$order = new WC_Order($post->ID);
 	$order_id = trim(str_replace('#', '', $order->get_order_number()));
+	?>
 
-	echo '<p><strong>'.__('Время доставки').':</strong> ' . get_post_meta( $order_id, 'shipping_date', true ) . '</p>';
-	echo '<p><strong>'.__('Улица').':</strong> ' . get_post_meta( $order_id, 'billing_street', true ) . '</p>';
-	echo '<p><strong>'.__('Дом').':</strong> ' . get_post_meta( $order_id, 'billing_house', true ) . '</p>';
+	<?php if ( !empty( trim($order->get_payment_method()) ) ) : ?>
+		<p style="margin:0 0 16px"><strong>Вариант оплаты:</strong> <?php echo $order->get_payment_method(); ?></p>
+	<?php endif; ?>
+
+	<?php if ( !empty( trim($order->get_shipping_method()) ) ) : ?>
+		<p style="margin:0 0 16px"><strong>Вариант доставки:</strong> <?php echo $order->get_shipping_method(); ?></p>
+	<?php endif; ?>
+
+	<?php if ( !empty( trim($order->get_billing_first_name()) ) ) : ?>
+		<p style="margin:0 0 16px"><strong>Имя:</strong> <?php echo $order->get_billing_first_name(); ?></p>
+	<?php endif; ?>
+
+	<?php if ( !empty( trim($order->get_billing_last_name()) ) ) : ?>
+		<p style="margin:0 0 16px"><strong>Фамилия:</strong> <?php echo $order->get_billing_last_name(); ?></p>
+	<?php endif; ?>
+
+	<?php if ( $order->get_billing_phone() ) : ?>
+		<p style="margin:0 0 16px"><strong>Телефон:</strong> <?php echo esc_html( $order->get_billing_phone() ); ?></p>
+	<?php endif; ?>
+
+	<?php if ( $order->get_billing_email() ) : ?>
+		<p style="margin:0 0 16px"><strong>E-mail:</strong> <?php echo esc_html( $order->get_billing_email() ); ?></p>
+	<?php endif; ?>
+
+	<?php if ( !empty( trim($order->get_billing_city()) ) ) : ?>
+		<p style="margin:0 0 16px"><strong>Город:</strong> <?php echo $order->get_billing_city(); ?></p>
+	<?php endif; ?>
+
+	<?php if ( !empty( trim(get_post_meta( $order->get_id(), 'billing_street', true )) ) ) : ?>
+		<p style="margin:0 0 16px"><strong>Улица:</strong> <?php echo get_post_meta( $order->get_id(), 'billing_street', true ); ?></p>
+	<?php endif; ?>
+
+	<?php if ( !empty( trim(get_post_meta( $order->get_id(), 'billing_house', true )) ) ) : ?>
+		<p style="margin:0 0 16px"><strong>Дом:</strong> <?php echo get_post_meta( $order->get_id(), 'billing_house', true ); ?></p>
+	<?php endif; ?>
+
+	<?php if ( !empty( trim($order->get_billing_address_2()) ) ) : ?>
+		<p style="margin:0 0 16px"><strong>Квартира:</strong> <?php echo $order->get_billing_address_2(); ?></p>
+	<?php endif; ?>
+
+	<?php if ( !empty( trim(get_post_meta( $order->get_id(), 'shipping_date', true )) ) ) : ?>
+		<p style="margin:0 0 16px"><strong>Желаемое время доставки:</strong> <?php echo get_post_meta( $order->get_id(), 'shipping_date', true ); ?></p>
+	<?php endif; ?>
+
+	<?php if ( !empty( trim(get_post_meta( $order->get_id(), 'order_comments', true )) ) ) : ?>
+		<p style="margin:0 0 16px"><strong>Комментарий:</strong> <?php echo get_post_meta( $order->get_id(), 'order_comments', true ); ?></p>
+	<?php endif; ?>
+
+	<?php if(get_post_meta( $order->get_id(), 'order_feedback_allow', true )) : ?>
+		<p style="margin:0 0 16px"><strong>Мне можно не звонить для подтверждения заказа</strong></p>
+	<?php endif; ?>
+	<?php
 }
 /* ======================================================================== */
 /* Выводим значения полей на странице редактирования заказа (в админке) End */
 /* ======================================================================== */
-
 
 
 
@@ -1405,9 +1363,11 @@ function custom_field_display_admin_order_meta($order){
 /* ================================================= */
 add_filter('woocommerce_email_order_meta_keys', 'email_checkout_field_order_meta_keys');
 function email_checkout_field_order_meta_keys( $keys ) {
-	$keys['Время доставки'] = 'shipping_date';
-	$keys['Улица'] = 'billing_street';
-	$keys['Дом'] = 'billing_house';
+//	$keys['Комментарий'] = 'order_comments';
+//	$keys['Время доставки'] = 'shipping_date';
+//	$keys['Улица'] = 'billing_street';
+//	$keys['Дом'] = 'billing_house';
+//	$keys['Квартира'] = 'billing_address_2';
 
 	return $keys;
 }
@@ -1418,6 +1378,9 @@ function email_checkout_field_order_meta_keys( $keys ) {
 
 
 
+/* ========================================================== */
+/* ============ Удаление полей и их редактирование ========== */
+/* ========================================================== */
 add_filter( 'woocommerce_checkout_fields' , 'custom_remove_woo_checkout_fields' );
 function custom_remove_woo_checkout_fields( $fields ) {
 	unset($fields['billing']['billing_country']);  //удаляем! тут хранится значение страны оплаты
@@ -1442,13 +1405,18 @@ function custom_remove_woo_checkout_fields( $fields ) {
 
 	return $fields;
 }
+/* ========================================================== */
+/* ========== Удаление полей и их редактирование End ======== */
+/* ========================================================== */
 
 
 
 
+/* ===================================================== */
+/* ============ Сортировка полей(очередность) ========== */
+/* ===================================================== */
 add_filter( 'woocommerce_checkout_fields', 'custom_move_checkout_fields' );
 function custom_move_checkout_fields( $fields ) {
-	// Lets display the email first. You can move these around depending on your needs.
 	$billing_order = array(
 		"billing_first_name",
 		"billing_phone",
@@ -1458,20 +1426,21 @@ function custom_move_checkout_fields( $fields ) {
 		"shipping_date",
 		"payment_method",
 		"billing_street",
+		"order_comments",
 		"billing_house",
 		"billing_address_2",
-
+		"order_feedback_allow",
 	);
-
-	// This makes sure above orders are maintained.
 	foreach($billing_order as $billing_field) {
 		$billing_fields[$billing_field] = $fields["billing"][$billing_field];
 	}
-
 	$fields["billing"] = $billing_fields;
-
 	return $fields;
 }
+/* ===================================================== */
+/* ========== Сортировка полей(очередность) End ======== */
+/* ===================================================== */
+
 
 // Billing Fields.
 //add_filter( 'woocommerce_checkout_fields' , 'custom_order_fields' );
@@ -1497,10 +1466,6 @@ function custom_move_checkout_fields( $fields ) {
 
 
 
-
-
-
-
 	/*unset($fields['billing']['billing_phone']);
 	unset($fields['order']['order_comments']);
 	unset($fields['billing']['billing_address_2']);
@@ -1516,53 +1481,312 @@ function custom_move_checkout_fields( $fields ) {
 
 add_action( 'woocommerce_checkout_fields', 'woocommerce_checkout_payment', 20 );*/
 
+/***************************************************/
 
 
 
 
-/* ==============================================================================================
-========================================== checkout Page End ====================================
-================================================================================================*/
-
-function new_post_shipping_method( $methods ) {
-	$methods['new_post'] = 'Новая Почта';
-
-	return $methods;
+// Add the information as meta data so that it can be seen as part of the order
+add_action('woocommerce_add_order_item_meta','add_values_to_order_item_meta', 10, 3 );
+function add_values_to_order_item_meta( $item_id, $cart_item, $cart_item_key ) {
+	// lets add the meta data to the order (with a label as key slug)
+	if( ! empty( $cart_item['shipping_date'] ) )
+		wc_add_order_item_meta($item_id, __('SSSSSShipping date'), $cart_item['shipping_date'], true);
 }
 
-add_filter( 'woocommerce_shipping_methods', 'new_post_shipping_method' );
+
+/***************************************************/
+// Adding Meta container admin shop_order pages
+add_action( 'add_meta_boxes', 'mv_add_meta_boxes' );
+if ( ! function_exists( 'mv_add_meta_boxes' ) )
+{
+	function mv_add_meta_boxes()
+	{
+		add_meta_box( 'shipping_date', __('Shipping_date','woocommerce'), 'mv_add_other_fields_for_packaging', 'shop_order', 'side', 'core' );
+	}
+}
+
+// Adding Meta field in the meta container admin shop_order pages
+if ( ! function_exists( 'mv_add_other_fields_for_packaging' ) )
+{
+	function mv_add_other_fields_for_packaging()
+	{
+		global $post;
+
+		$meta_field_data = get_post_meta( $post->ID, 'shipping_date', true ) ? get_post_meta( $post->ID, 'shipping_date', true ) : '';
+
+		echo '<input type="hidden" name="mv_other_meta_field_nonce" value="' . wp_create_nonce() . '">
+        <p style="border-bottom:solid 1px #eee;padding-bottom:13px;">
+            <input type="text" style="width:250px;";" name="shipping_date" placeholder="' . $meta_field_data . '" value="' . $meta_field_data . '"></p>';
+
+	}
+}
+
+// Save the data of the Meta field
+add_action( 'save_post', 'mv_save_wc_order_other_fields', 10, 1 );
+if ( ! function_exists( 'mv_save_wc_order_other_fields' ) )
+{
+
+	function mv_save_wc_order_other_fields( $post_id ) {
+
+		// We need to verify this with the proper authorization (security stuff).
+
+		// Check if our nonce is set.
+		if ( ! isset( $_POST[ 'mv_other_meta_field_nonce' ] ) ) {
+			return $post_id;
+		}
+		$nonce = $_REQUEST[ 'mv_other_meta_field_nonce' ];
+
+		//Verify that the nonce is valid.
+		if ( ! wp_verify_nonce( $nonce ) ) {
+			return $post_id;
+		}
+
+		// If this is an autosave, our form has not been submitted, so we don't want to do anything.
+		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+			return $post_id;
+		}
+
+		// Check the user's permissions.
+		if ( 'page' == $_POST[ 'post_type' ] ) {
+
+			if ( ! current_user_can( 'edit_page', $post_id ) ) {
+				return $post_id;
+			}
+		} else {
+
+			if ( ! current_user_can( 'edit_post', $post_id ) ) {
+				return $post_id;
+			}
+		}
+		// --- Its safe for us to save the data ! --- //
+
+		// Sanitize user input  and update the meta field in the database.
+		update_post_meta( $post_id, 'shipping_date', $_POST[ 'shipping_date' ] );
+	}
+}
+
+/* ==========================================================================================================================================
+================================================================ checkout Page End ==========================================================
+============================================================================================================================================*/
 
 
-add_filter('woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment');
-
-function woocommerce_header_add_to_cart_fragment($fragments){
+/* Обновление данных о корзине при клике на кнопку В корзину */
+add_filter('woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment_qty');
+function woocommerce_header_add_to_cart_fragment_qty($fragments){
 	ob_start();
+	global $woocommerce;
 	?>
-		<div class="headerTop__cart">
-										<?php global $woocommerce; ?>
-										<div class="headerTop__cartQtyWrap">
-											<img class="headerTop__cartQtyImg" src="<?php bloginfo('template_directory') ?>/images/myicons/cart.png" alt="Cart Icon">
-											<span class="headerTop__cartQty"><?php echo sprintf(_n('%d', '%d', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count);?></span>
-										</div>
-										<div class="headerTop__cartTotalWrap">
-											<span class="headerTop__cartTotalInner">
-												<span class="headerTop__cartTotalDivider">&ndash;</span>
-												<a class="headerTop__cartTotalLink" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e('View your shopping cart', 'woothemes'); ?>">
-													<span class="headerTop__cartTotal">
-														<?php echo $woocommerce->cart->cart_contents_total; ?>
-													</span>
-													<span class="headerTop__cartTotalCurrency">
-														<?php echo get_woocommerce_currency_symbol(); ?>
-													</span>
-												</a>
-											</span>
-										</div>
-									</div>
+		<span class="headerTop__cartQty"><?php echo sprintf(_n('%d', '%d', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count);?></span>
 	<?php
-	$fragments['.headerTop__cart'] = ob_get_clean();	
+	$fragments['.headerTop__cartQty'] = ob_get_clean();
 	return $fragments;
 }
 
+add_filter('woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment_summ');
+function woocommerce_header_add_to_cart_fragment_summ($fragments){
+	ob_start();
+	global $woocommerce;
+	?>
+		<span class="headerTop__cartTotal">
+			<?php echo $woocommerce->cart->cart_contents_total; ?>
+		</span>
+	<?php
+	$fragments['.headerTop__cartTotal'] = ob_get_clean();
+	return $fragments;
+}
+
+add_filter('woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment_popup_summ');
+function woocommerce_header_add_to_cart_fragment_popup_summ($fragments){
+	ob_start();
+	global $woocommerce;
+	?>
+		<span class="cart__popup__cartTotal">
+			<?php echo $woocommerce->cart->cart_contents_total; ?>
+		</span>
+	<?php
+	$fragments['.cart__popup__cartTotal'] = ob_get_clean();
+	return $fragments;
+}
+/* Обновление данных о корзине при клике на кнопку В корзину End */
+
+
+
+
+
+
+/*add_action('woocommerce_applied_coupon', 'apply_product_on_coupon');
+function apply_product_on_coupon( ) {
+	echo 'xdasssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss';
+}
+
+add_action( 'woocommerce_cart_calculate_fees', 'option2_additional_discount', 10, 1 );
+function option2_additional_discount( $cart_obj ) {
+
+	echo 'ddddddddddddddddddddd';
+}*/
+
+/*add_filter( 'woocommerce_coupons_enabled', 'woocommerce_coupons_enabled_checkout' );
+function woocommerce_coupons_enabled_checkout( $coupons_enabled ) {
+	global $woocommerce;
+	if ( ! empty( $woocommerce->cart->applied_coupons ) ) {
+		echo '111111111111';
+	}
+	echo '222222222222222222';
+}*/
+
+/*function coupon_check_via_ajax(){
+	$code = strtolower(trim($_POST['code']));
+	$coupon = new WC_Coupon($code);
+	$coupon_post = get_post($coupon->id);
+
+	if(!empty($coupon_post) && $coupon_post != null){
+		$message = 'Coupon not valid';
+		$status = 0;
+	}
+
+	if($coupon_post->post_status == 'publish'){
+		$message = 'Coupon validated';
+		$status = 1;
+	} else {
+		$status = 0;
+		$message = 'Coupon not found!';
+	}
+
+	print json_encode( [ 'status' => $status, 'message' => $message, 'poststatus' => $coupon_post->post_status, 'coupon_post' => $coupon_post ] );
+	exit();
+}
+add_action( 'wp_ajax_check_coupon_via_ajax', 'coupon_check_via_ajax' );
+add_action( 'wp_ajax_nopriv_check_coupon_via_ajax', 'coupon_check_via_ajax' );*/
+
+
+
+/* ================================================================= */
+/* ========== Обработка кода на скидку введенного в Корзине ======== */
+/* ================================================================= */
+add_action( 'wp_ajax_rempty_coupon_page', 'rempty_coupon_page' );
+add_action( 'wp_ajax_nopriv_rempty_coupon_page', 'rempty_coupon_page' );
+function rempty_coupon_page() {
+	$code = $_REQUEST['coupon_code'];
+	global $woocommerce;
+	if( empty( $code ) || !isset( $code ) ) {
+		$response = array(
+			'result' => 'error',
+			'message' => 'Заполните поле Код на скидку.',
+			'applied_coupons' => $woocommerce->cart->get_applied_coupons(),
+		);
+		header( 'Content-Type: application/json' );
+		echo json_encode( $response );
+		exit();
+	}
+	$coupon = new WC_Coupon( $code );
+	global $woocommerce;
+
+	if ( count($woocommerce->cart->get_applied_coupons()) > 0 ) {
+		$response = array(
+			'result' => 'error',
+			'message' => 'Вы не можете применить больше одного кода на скидку.'
+		);
+		header( 'Content-Type: application/json' );
+		echo json_encode( $response );
+		exit();
+	} else if( !$coupon->is_valid() ) {
+		$response = array(
+			'result' => 'error',
+			'message' => 'Некорректный код на скидку. Пожалуйста, попробуйте ещё раз.'
+		);
+		header( 'Content-Type: application/json' );
+		echo json_encode( $response );
+		exit();
+	} else {
+		$woocommerce->cart->add_discount( $code );
+		$response = array(
+			'result' => 'success',
+			'message' =>'Ваш код на скидку успешно добавлен.',
+		);
+		header( 'Content-Type: application/json' );
+		echo json_encode( $response );
+		exit();
+	}
+}
+/* ===================================================================== */
+/* ========== Обработка кода на скидку введенного в Корзине End ======== */
+/* ===================================================================== */
+
+
+
+/* Переопределение функции wc_cart_totals_shipping_html() */
+function my_wc_cart_totals_shipping_html() {
+	$packages = WC()->shipping->get_packages();
+	$first    = true;
+
+	foreach ( $packages as $i => $package ) {
+		$chosen_method = isset( WC()->session->chosen_shipping_methods[ $i ] ) ? WC()->session->chosen_shipping_methods[ $i ] : '';
+		$product_names = array();
+
+		if ( count( $packages ) > 1 ) {
+			foreach ( $package['contents'] as $item_id => $values ) {
+				$product_names[ $item_id ] = $values['data']->get_name() . ' &times;' . $values['quantity'];
+			}
+			$product_names = apply_filters( 'woocommerce_shipping_package_details_array', $product_names, $package );
+		}
+
+		wc_get_template(
+			'cart/my-cart-shipping.php', array(
+				'package'                  => $package,
+				'available_methods'        => $package['rates'],
+				'show_package_details'     => count( $packages ) > 1,
+				'show_shipping_calculator' => is_cart() && $first,
+				'package_details'          => implode( ', ', $product_names ),
+				/* translators: %d: shipping package number */
+				'package_name'             => apply_filters( 'woocommerce_shipping_package_name', ( ( $i + 1 ) > 1 ) ? sprintf( _x( 'Shipping %d', 'shipping packages', 'woocommerce' ), ( $i + 1 ) ) : _x( 'Shipping', 'shipping package', 'woocommerce' ), $i, $package ),
+				'index'                    => $i,
+				'chosen_method'            => $chosen_method,
+			)
+		);
+
+		$first = false;
+	}
+}
+/* Переопределение функции wc_cart_totals_shipping_html() End */
+
+
+
+
+/* Удаляет сообщение "successfully added to your cart" в карточке товара */
+add_filter( 'wc_add_to_cart_message_html', 'empty_wc_add_to_cart_message');
+function empty_wc_add_to_cart_message() {
+	return '';
+};
+/* Удаляет сообщение "successfully added to your cart" в карточке товара End */
+
+
+/* моя функция для Custom Field Suite */
+function cf($name) {
+	echo trim(CFS()->get($name));
+}
+/* моя функция для Custom Field Suite End */
+
+
+/* Вывод разметки Блока howitwork__item на главной странице */
+function printHowitworkItem($inds){
+	foreach ( $inds as $ind ) :
+	?>
+	<div class="howitwork__item">
+		<div class="howitwork__itemHeader">
+			<img src="<?php cf('howitwork_img_'.$ind); ?>" alt="" class="howitwork__itemImg">
+		</div>
+		<div class="howitwork__itemTitle">
+			<?php cf('howitwork_title_'.$ind); ?>
+		</div>
+		<div class="howitwork__itemDescr">
+			<?php cf('howitwork_descr_'.$ind); ?>
+		</div>
+	</div>
+	<?php
+	endforeach;
+}
+/* Вывод разметки Блока howitwork__item на главной странице End */
 
 
 

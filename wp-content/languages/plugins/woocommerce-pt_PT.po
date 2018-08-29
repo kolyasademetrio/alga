@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WooCommerce - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2018-08-16 11:59:38+0000\n"
+"PO-Revision-Date: 2018-08-23 11:08:33+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -30,6 +30,10 @@ msgstr "Não é possível definir atributos porque o produto principal é invál
 #: includes/admin/views/html-notice-wootenberg.php:30
 msgid "Install the WooCommerce Gutenberg Products Block"
 msgstr "Instalar o bloco Gutenberg de produtos WooCommerce"
+
+#: includes/admin/views/html-notice-wootenberg.php:19
+msgid "Activate the Gutenberg Products Block"
+msgstr "Activar o bloco Gutenberg de produtos WooCommerce"
 
 #: includes/admin/views/html-notice-wootenberg.php:15
 msgid "We noticed you're experimenting with Gutenberg: Try the WooCommerce Gutenberg Products Block for a powerful new way to feature products in posts."
@@ -5031,10 +5035,6 @@ msgstr "Restrição de endereço de email inválida"
 msgid "Invalid discount type"
 msgstr "Tipo de desconto inválido"
 
-#: includes/class-wc-countries.php:933
-msgid "Eircode"
-msgstr "Código Postal"
-
 #: includes/class-wc-form-handler.php:1029
 #: includes/class-wc-form-handler.php:1033
 #: includes/class-wc-form-handler.php:1182 includes/wc-user-functions.php:108
@@ -5060,6 +5060,10 @@ msgstr "Morada"
 #: includes/data-stores/class-wc-shipping-zone-data-store.php:99
 msgid "Invalid data store."
 msgstr "Dados de loja inválidos."
+
+#: includes/class-wc-countries.php:933
+msgid "Eircode"
+msgstr "Código postal"
 
 #. translators: %s: field name
 #: includes/class-wc-checkout.php:667
@@ -7926,10 +7930,6 @@ msgstr "%1$s não pode ser instalado (%2$s). <a href=\"%3$s\">Por favor instale 
 msgid "Invalid webhook ID."
 msgstr "ID do webhook inválido."
 
-#: includes/api/v1/class-wc-rest-taxes-controller.php:592
-msgid "Postcode / ZIP."
-msgstr "Código Postal."
-
 #: includes/api/v1/class-wc-rest-webhooks-controller.php:757
 msgid "Limit result set to webhooks assigned a specific status."
 msgstr "Limitar o conjunto de resultados a webhooks com um estado específico."
@@ -7954,6 +7954,10 @@ msgstr "O identificador alfanumérico para este recurso."
 #: includes/api/v1/class-wc-rest-webhooks-controller.php:669
 msgid "Secret key used to generate a hash of the delivered webhook and provided in the request headers. This will default to a MD5 hash from the current user's ID|username if not provided."
 msgstr "Chave secreta utilizada para gerar um código de validação (hash) do webhook entregue e fornecida nos cabeçalhos do pedido. Se este item não for fornecido, será utilizado por omissão um código de validação MD5 do ID|nome de utilizador do utilizador atual."
+
+#: includes/api/v1/class-wc-rest-taxes-controller.php:592
+msgid "Postcode / ZIP."
+msgstr "Código postal."
 
 #: includes/api/class-wc-rest-product-categories-controller.php:197
 #: includes/api/v1/class-wc-rest-product-attribute-terms-controller.php:225
@@ -8764,6 +8768,23 @@ msgstr "Total cobrado para envio."
 msgid "Controls whether or not the variation is listed as \"in stock\" or \"out of stock\" on the frontend."
 msgstr "Controla se a variação de produto é listada na loja como \"em stock\" ou \"esgotado\"."
 
+#: includes/api/class-wc-rest-coupons-controller.php:508
+#: includes/api/class-wc-rest-customers-controller.php:347
+#: includes/api/class-wc-rest-order-refunds-controller.php:406
+#: includes/api/class-wc-rest-order-refunds-controller.php:530
+#: includes/api/class-wc-rest-orders-controller.php:1148
+#: includes/api/class-wc-rest-orders-controller.php:1260
+#: includes/api/class-wc-rest-orders-controller.php:1351
+#: includes/api/class-wc-rest-orders-controller.php:1437
+#: includes/api/class-wc-rest-orders-controller.php:1535
+#: includes/api/class-wc-rest-orders-controller.php:1593
+#: includes/api/class-wc-rest-product-variations-controller.php:996
+#: includes/api/class-wc-rest-products-controller.php:2019
+#: includes/api/v1/class-wc-rest-order-refunds-controller.php:483
+#: includes/api/v1/class-wc-rest-orders-controller.php:1314
+msgid "Meta key."
+msgstr "Chave de metadados."
+
 #: includes/api/v1/class-wc-rest-order-refunds-controller.php:489
 #: includes/api/v1/class-wc-rest-orders-controller.php:1320
 msgid "Meta label."
@@ -8790,22 +8811,15 @@ msgstr "ID de encomenda pai."
 msgid "Total discount tax amount for the order."
 msgstr "Montante total do imposto do desconto da encomenda."
 
-#: includes/api/class-wc-rest-coupons-controller.php:508
-#: includes/api/class-wc-rest-customers-controller.php:347
-#: includes/api/class-wc-rest-order-refunds-controller.php:406
-#: includes/api/class-wc-rest-order-refunds-controller.php:530
-#: includes/api/class-wc-rest-orders-controller.php:1148
-#: includes/api/class-wc-rest-orders-controller.php:1260
-#: includes/api/class-wc-rest-orders-controller.php:1351
-#: includes/api/class-wc-rest-orders-controller.php:1437
-#: includes/api/class-wc-rest-orders-controller.php:1535
-#: includes/api/class-wc-rest-orders-controller.php:1593
-#: includes/api/class-wc-rest-product-variations-controller.php:996
-#: includes/api/class-wc-rest-products-controller.php:2019
-#: includes/api/v1/class-wc-rest-order-refunds-controller.php:483
-#: includes/api/v1/class-wc-rest-orders-controller.php:1314
-msgid "Meta key."
-msgstr "Chave de metadados."
+#: includes/api/class-wc-rest-orders-controller.php:916
+#: includes/api/v1/class-wc-rest-orders-controller.php:998
+msgid "Total shipping amount for the order."
+msgstr "Montante total de custos de envio da encomenda."
+
+#: includes/api/class-wc-rest-orders-controller.php:922
+#: includes/api/v1/class-wc-rest-orders-controller.php:1004
+msgid "Total shipping tax amount for the order."
+msgstr "Montante total do imposto de custos de envio da encomenda."
 
 #: includes/api/class-wc-rest-coupons-controller.php:513
 #: includes/api/class-wc-rest-customers-controller.php:352
@@ -8823,16 +8837,6 @@ msgstr "Chave de metadados."
 #: includes/api/v1/class-wc-rest-orders-controller.php:1326
 msgid "Meta value."
 msgstr "Valor de metadados."
-
-#: includes/api/class-wc-rest-orders-controller.php:916
-#: includes/api/v1/class-wc-rest-orders-controller.php:998
-msgid "Total shipping amount for the order."
-msgstr "Montante total de custos de envio da encomenda."
-
-#: includes/api/class-wc-rest-orders-controller.php:922
-#: includes/api/v1/class-wc-rest-orders-controller.php:1004
-msgid "Total shipping tax amount for the order."
-msgstr "Montante total do imposto de custos de envio da encomenda."
 
 #: includes/api/class-wc-rest-orders-controller.php:928
 #: includes/api/v1/class-wc-rest-orders-controller.php:1010
@@ -9624,41 +9628,6 @@ msgstr "ID de recurso inválida."
 msgid "Invalid resource id for reassignment."
 msgstr "ID de recurso inválida para reatribuição."
 
-#: includes/api/class-wc-rest-customers-controller.php:154
-#: includes/api/v1/class-wc-rest-customers-controller.php:650
-msgid "The email address for the customer."
-msgstr "O endereço de email do cliente."
-
-#: includes/api/v1/class-wc-rest-customers-controller.php:685
-msgid "Last order data."
-msgstr "Dados da última encomenda."
-
-#: includes/api/class-wc-rest-customers-controller.php:316
-#: includes/api/v1/class-wc-rest-customers-controller.php:705
-msgid "Quantity of orders made by the customer."
-msgstr "Quantidade de encomendas efectuadas pelo cliente."
-
-#: includes/api/class-wc-rest-customers-controller.php:322
-#: includes/api/v1/class-wc-rest-customers-controller.php:711
-msgid "Total amount spent."
-msgstr "Montante total despendido."
-
-#: includes/api/class-wc-rest-customers-controller.php:195
-#: includes/api/v1/class-wc-rest-customers-controller.php:723
-msgid "List of billing address data."
-msgstr "Lista de dados da morada de facturação."
-
-#: includes/api/class-wc-rest-customers-controller.php:230
-#: includes/api/class-wc-rest-customers-controller.php:293
-#: includes/api/class-wc-rest-orders-controller.php:1010
-#: includes/api/class-wc-rest-orders-controller.php:1073
-#: includes/api/v1/class-wc-rest-customers-controller.php:758
-#: includes/api/v1/class-wc-rest-customers-controller.php:821
-#: includes/api/v1/class-wc-rest-orders-controller.php:1063
-#: includes/api/v1/class-wc-rest-orders-controller.php:1126
-msgid "ISO code or name of the state, province or district."
-msgstr "Código ISO ou nome do estado, da província ou do distrito."
-
 #: includes/abstracts/abstract-wc-rest-terms-controller.php:66
 #: includes/api/class-wc-rest-coupons-controller.php:76
 #: includes/api/class-wc-rest-customers-controller.php:124
@@ -9709,6 +9678,41 @@ msgstr "Código ISO ou nome do estado, da província ou do distrito."
 #: includes/api/v1/class-wc-rest-webhooks-controller.php:615
 msgid "Unique identifier for the resource."
 msgstr "Identificador exclusivo do recurso."
+
+#: includes/api/class-wc-rest-customers-controller.php:154
+#: includes/api/v1/class-wc-rest-customers-controller.php:650
+msgid "The email address for the customer."
+msgstr "O endereço de email do cliente."
+
+#: includes/api/v1/class-wc-rest-customers-controller.php:685
+msgid "Last order data."
+msgstr "Dados da última encomenda."
+
+#: includes/api/class-wc-rest-customers-controller.php:316
+#: includes/api/v1/class-wc-rest-customers-controller.php:705
+msgid "Quantity of orders made by the customer."
+msgstr "Quantidade de encomendas efectuadas pelo cliente."
+
+#: includes/api/class-wc-rest-customers-controller.php:322
+#: includes/api/v1/class-wc-rest-customers-controller.php:711
+msgid "Total amount spent."
+msgstr "Montante total despendido."
+
+#: includes/api/class-wc-rest-customers-controller.php:195
+#: includes/api/v1/class-wc-rest-customers-controller.php:723
+msgid "List of billing address data."
+msgstr "Lista de dados da morada de facturação."
+
+#: includes/api/class-wc-rest-customers-controller.php:230
+#: includes/api/class-wc-rest-customers-controller.php:293
+#: includes/api/class-wc-rest-orders-controller.php:1010
+#: includes/api/class-wc-rest-orders-controller.php:1073
+#: includes/api/v1/class-wc-rest-customers-controller.php:758
+#: includes/api/v1/class-wc-rest-customers-controller.php:821
+#: includes/api/v1/class-wc-rest-orders-controller.php:1063
+#: includes/api/v1/class-wc-rest-orders-controller.php:1126
+msgid "ISO code or name of the state, province or district."
+msgstr "Código ISO ou nome do estado, da província ou do distrito."
 
 #: includes/api/class-wc-rest-customers-controller.php:258
 #: includes/api/v1/class-wc-rest-customers-controller.php:786
@@ -10500,6 +10504,10 @@ msgstr "Ordene com base nos atributos dos objetos."
 msgid "Use WP Query arguments to modify the response; private query vars require appropriate authorization."
 msgstr "Utilize argumentos da Consulta do WP para modificar a resposta; as variáveis de consulta privadas requerem uma autorização apropriada."
 
+#: includes/api/v1/class-wc-rest-product-attributes-controller.php:141
+msgid "Sorry, you cannot create new resource."
+msgstr "Desculpe, você não pode criar novos recursos."
+
 #: includes/abstracts/abstract-wc-rest-terms-controller.php:92
 #: includes/api/class-wc-rest-order-refunds-controller.php:112
 #: includes/api/v1/class-wc-rest-customers-controller.php:104
@@ -10512,10 +10520,6 @@ msgstr "Utilize argumentos da Consulta do WP para modificar a resposta; as vari�
 #: includes/api/v1/class-wc-rest-webhooks-controller.php:104
 msgid "Required to be true, as resource does not support trashing."
 msgstr "É necessário ser verdadeiro, uma vez que o recurso não é compatível com a eliminação."
-
-#: includes/api/v1/class-wc-rest-product-attributes-controller.php:141
-msgid "Sorry, you cannot create new resource."
-msgstr "Desculpe, você não pode criar novos recursos."
 
 #: includes/api/class-wc-rest-system-status-tools-controller.php:109
 #: includes/api/v1/class-wc-rest-product-attributes-controller.php:177
@@ -10788,10 +10792,6 @@ msgstr "[{site_title}] Encomenda falhada ({order_number})"
 msgid "Invalid product ID."
 msgstr "ID de produto inválido."
 
-#: includes/class-wc-countries.php:1133
-msgid "ZIP"
-msgstr "Código Postal"
-
 #: includes/admin/views/html-notice-updated.php:14
 msgid "WooCommerce data update complete. Thank you for updating to the latest version!"
 msgstr "A actualização de dados do WooCommerce foi concluída. Obrigado por actualizar para a última versão!"
@@ -10809,6 +10809,10 @@ msgstr "Erro: O URL de entrega devolveu o seguinte código de resposta: %s"
 #: includes/class-wc-frontend-scripts.php:559
 msgid "Please select some product options before adding this product to your cart."
 msgstr "Seleccione as opções do produto antes de o adicionar ao seu carrinho."
+
+#: includes/class-wc-countries.php:1133
+msgid "ZIP"
+msgstr "Código postal"
 
 #: includes/api/legacy/v3/class-wc-api-taxes.php:259
 msgid "You do not have permission to edit tax rates"
@@ -12639,6 +12643,20 @@ msgstr "Esconder template"
 msgid "Instructions"
 msgstr "Instruções"
 
+#: includes/gateways/bacs/class-wc-gateway-bacs.php:104
+#: includes/gateways/cheque/class-wc-gateway-cheque.php:80
+msgid "Instructions that will be added to the thank you page and emails."
+msgstr "Instruções que serão adicionadas à página de obrigado e mensagens de email."
+
+#: includes/gateways/bacs/class-wc-gateway-bacs.php:143
+#: includes/gateways/bacs/class-wc-gateway-bacs.php:323
+msgid "IBAN"
+msgstr "IBAN"
+
+#: includes/gateways/bacs/class-wc-gateway-bacs.php:144
+msgid "BIC / Swift"
+msgstr "BIC / Swift"
+
 #: includes/admin/importers/mappings/generic.php:21
 #: includes/admin/settings/views/html-admin-page-shipping-zone-methods.php:84
 #: includes/gateways/bacs/class-wc-gateway-bacs.php:88
@@ -12678,20 +12696,6 @@ msgstr "Título"
 #: includes/shipping/local-pickup/class-wc-shipping-local-pickup.php:82
 msgid "This controls the title which the user sees during checkout."
 msgstr "Isto controla o título que o utilizador vê durante o checkout."
-
-#: includes/gateways/bacs/class-wc-gateway-bacs.php:104
-#: includes/gateways/cheque/class-wc-gateway-cheque.php:80
-msgid "Instructions that will be added to the thank you page and emails."
-msgstr "Instruções que serão adicionadas à página de obrigado e mensagens de email."
-
-#: includes/gateways/bacs/class-wc-gateway-bacs.php:143
-#: includes/gateways/bacs/class-wc-gateway-bacs.php:323
-msgid "IBAN"
-msgstr "IBAN"
-
-#: includes/gateways/bacs/class-wc-gateway-bacs.php:144
-msgid "BIC / Swift"
-msgstr "BIC / Swift"
 
 #: includes/gateways/bacs/class-wc-gateway-bacs.php:169
 msgid "Remove selected account(s)"
@@ -13095,15 +13099,6 @@ msgstr "Os utilizadores terão que gastar este montante para obter envio grátis
 msgid "What fee do you want to charge for local delivery, disregarded if you choose free. Leave blank to disable."
 msgstr "Qual a taxa que você deseja cobrar para a entrega local, excetuando a opção de envio grátis. Deixe em branco para desactivar."
 
-#: includes/emails/class-wc-email-cancelled-order.php:141
-#: includes/emails/class-wc-email-customer-completed-order.php:139
-#: includes/emails/class-wc-email-customer-refunded-order.php:231
-#: includes/emails/class-wc-email-failed-order.php:141
-#: includes/emails/class-wc-email-new-order.php:146
-#: includes/emails/class-wc-email.php:604
-msgid "Enable this email notification"
-msgstr "Activar esta notificação por email"
-
 #: includes/emails/class-wc-email-cancelled-order.php:139
 #: includes/emails/class-wc-email-customer-completed-order.php:137
 #: includes/emails/class-wc-email-customer-refunded-order.php:229
@@ -13120,6 +13115,15 @@ msgstr "Activar esta notificação por email"
 msgid "Enable/Disable"
 msgstr "Activar/Desactivar"
 
+#: includes/emails/class-wc-email-cancelled-order.php:141
+#: includes/emails/class-wc-email-customer-completed-order.php:139
+#: includes/emails/class-wc-email-customer-refunded-order.php:231
+#: includes/emails/class-wc-email-failed-order.php:141
+#: includes/emails/class-wc-email-new-order.php:146
+#: includes/emails/class-wc-email.php:604
+msgid "Enable this email notification"
+msgstr "Activar esta notificação por email"
+
 #: includes/emails/class-wc-email-customer-processing-order.php:34
 msgid "This is an order notification sent to customers containing order details after payment."
 msgstr "Esta é uma notificação de encomenda enviada aos clientes contendo os detalhes da encomenda após pagamento."
@@ -13127,10 +13131,6 @@ msgstr "Esta é uma notificação de encomenda enviada aos clientes contendo os 
 #: includes/gateways/paypal/includes/settings-paypal.php:93
 msgid "Send shipping details to PayPal instead of billing."
 msgstr "Enviar detalhes de envio para o PayPal em vez dos detalhes de facturação."
-
-#: includes/gateways/cheque/class-wc-gateway-cheque.php:74
-msgid "Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode."
-msgstr "Por favor, envie o seu cheque para Nome da Loja, Rua da Loja, Localidade da Loja, Código Postal da Loja."
 
 #: includes/emails/class-wc-email.php:790
 msgid "Template file deleted from theme."
@@ -13551,6 +13551,10 @@ msgstr "Pagamento pendente: %s."
 msgid "PDT payment completed"
 msgstr "Pagamento PDT concluído"
 
+#: includes/gateways/cheque/class-wc-gateway-cheque.php:74
+msgid "Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode."
+msgstr "Por favor, envie o seu cheque para Nome da loja, Rua da loja, Localidade da loja, Código postal da loja."
+
 #: includes/api/legacy/v2/class-wc-api-products.php:2248
 msgid "Invalid product SKU"
 msgstr "REF de produto inválida"
@@ -13757,19 +13761,6 @@ msgstr "(sem imposto)"
 #: includes/class-wc-countries.php:670
 msgid "Town / City"
 msgstr "Localidade"
-
-#: includes/admin/class-wc-admin-profile.php:69
-#: includes/admin/class-wc-admin-profile.php:129
-#: includes/admin/class-wc-admin-setup-wizard.php:420
-#: includes/admin/meta-boxes/class-wc-meta-box-order-data.php:68
-#: includes/admin/meta-boxes/class-wc-meta-box-order-data.php:119
-#: includes/admin/settings/class-wc-settings-general.php:100
-#: includes/admin/settings/class-wc-settings-tax.php:195
-#: includes/admin/settings/views/html-settings-tax.php:28
-#: includes/class-wc-countries.php:686
-#: templates/cart/shipping-calculator.php:91
-msgid "Postcode / ZIP"
-msgstr "Código Postal"
 
 #: includes/class-wc-countries.php:763
 msgid "Suburb"
@@ -14454,11 +14445,6 @@ msgstr "%s não é um endereço de email válido."
 msgid "%s is not a valid phone number."
 msgstr "%s não é um número de telefone válido."
 
-#: includes/class-wc-form-handler.php:130
-#: includes/shortcodes/class-wc-shortcode-cart.php:33
-msgid "Please enter a valid postcode / ZIP."
-msgstr "Por favor insira um Código Postal válido."
-
 #. translators: %s: field name
 #: includes/class-wc-checkout.php:722 includes/class-wc-form-handler.php:117
 #: includes/class-wc-form-handler.php:248
@@ -14607,6 +14593,24 @@ msgstr "Falhou o reembolso."
 #: includes/class-wc-ajax.php:1941
 msgid "Dismiss this notice."
 msgstr "Ignorar este aviso."
+
+#: includes/admin/class-wc-admin-profile.php:69
+#: includes/admin/class-wc-admin-profile.php:129
+#: includes/admin/class-wc-admin-setup-wizard.php:420
+#: includes/admin/meta-boxes/class-wc-meta-box-order-data.php:68
+#: includes/admin/meta-boxes/class-wc-meta-box-order-data.php:119
+#: includes/admin/settings/class-wc-settings-general.php:100
+#: includes/admin/settings/class-wc-settings-tax.php:195
+#: includes/admin/settings/views/html-settings-tax.php:28
+#: includes/class-wc-countries.php:686
+#: templates/cart/shipping-calculator.php:91
+msgid "Postcode / ZIP"
+msgstr "Código postal"
+
+#: includes/class-wc-form-handler.php:130
+#: includes/shortcodes/class-wc-shortcode-cart.php:33
+msgid "Please enter a valid postcode / ZIP."
+msgstr "Por favor insira um Código postal válido."
 
 #: includes/admin/views/html-admin-page-status-report.php:58
 msgid "Home URL"
@@ -15401,6 +15405,22 @@ msgstr "Eliminar definitivamente a nota da encomenda"
 msgid "You do not have permission to delete product attributes"
 msgstr "Não tem permissões para eliminar atributos de produto"
 
+#: includes/api/legacy/v1/class-wc-api-resource.php:333
+#: includes/api/legacy/v2/class-wc-api-products.php:463
+#: includes/api/legacy/v2/class-wc-api-products.php:2225
+#: includes/api/legacy/v2/class-wc-api-resource.php:390
+#: includes/api/legacy/v3/class-wc-api-products.php:522
+#: includes/api/legacy/v3/class-wc-api-products.php:866
+#: includes/api/legacy/v3/class-wc-api-products.php:1058
+#: includes/api/legacy/v3/class-wc-api-products.php:2786
+#: includes/api/legacy/v3/class-wc-api-products.php:3064
+#: includes/api/legacy/v3/class-wc-api-products.php:3375
+#: includes/api/legacy/v3/class-wc-api-resource.php:394
+#: includes/api/legacy/v3/class-wc-api-taxes.php:354
+#: includes/api/legacy/v3/class-wc-api-taxes.php:665
+msgid "Deleted %s"
+msgstr "Eliminado %s"
+
 #: includes/api/legacy/v1/class-wc-api-resource.php:107
 #: includes/api/legacy/v2/class-wc-api-resource.php:131
 #: includes/api/legacy/v2/class-wc-api-webhooks.php:515
@@ -15422,22 +15442,6 @@ msgstr "Cliente não pode ser eliminado"
 #: includes/api/legacy/v3/class-wc-api-resource.php:388
 msgid "Permanently deleted %s"
 msgstr "%s eliminado permanentemente"
-
-#: includes/api/legacy/v1/class-wc-api-resource.php:333
-#: includes/api/legacy/v2/class-wc-api-products.php:463
-#: includes/api/legacy/v2/class-wc-api-products.php:2225
-#: includes/api/legacy/v2/class-wc-api-resource.php:390
-#: includes/api/legacy/v3/class-wc-api-products.php:522
-#: includes/api/legacy/v3/class-wc-api-products.php:866
-#: includes/api/legacy/v3/class-wc-api-products.php:1058
-#: includes/api/legacy/v3/class-wc-api-products.php:2786
-#: includes/api/legacy/v3/class-wc-api-products.php:3064
-#: includes/api/legacy/v3/class-wc-api-products.php:3375
-#: includes/api/legacy/v3/class-wc-api-resource.php:394
-#: includes/api/legacy/v3/class-wc-api-taxes.php:354
-#: includes/api/legacy/v3/class-wc-api-taxes.php:665
-msgid "Deleted %s"
-msgstr "Eliminado %s"
 
 #: includes/api/legacy/v2/class-wc-api-coupons.php:350
 #: includes/api/legacy/v2/class-wc-api-coupons.php:358
@@ -15550,6 +15554,10 @@ msgstr "Saber mais sobre o Storefront"
 msgid "Learn more about templates"
 msgstr "Saber mais sobre temas"
 
+#: includes/admin/views/html-notice-template-check.php:15
+msgid "<strong>Your theme (%1$s) contains outdated copies of some WooCommerce template files.</strong> These files may need updating to ensure they are compatible with the current version of WooCommerce. You can see which files are affected from the <a href=\"%2$s\">system status page</a>. If in doubt, check with the author of the theme."
+msgstr "<strong>O seu tema (%1$s) contém cópias de ficheiros personalizados do WooCommerce desactualizadas.</strong> Estes ficheiros necessitam de ser actualizados de forma a assegurar que são compatíveis com o versão actual do WooCommerce. Poderá ver quais os ficheiros afectados na <a href=\"%2$s\">página de estado do sistema</a>. Em caso de dúvidas, confirme com o autor do tema."
+
 #: includes/admin/views/html-notice-install.php:13
 msgid "Skip setup"
 msgstr "Ignorar configuração"
@@ -15580,10 +15588,6 @@ msgstr "Tema Filho"
 #: includes/admin/views/html-admin-page-status-report.php:709
 msgid "Page does not contain the shortcode."
 msgstr "A página não pode conter o código:."
-
-#: includes/admin/views/html-notice-template-check.php:15
-msgid "<strong>Your theme (%1$s) contains outdated copies of some WooCommerce template files.</strong> These files may need updating to ensure they are compatible with the current version of WooCommerce. You can see which files are affected from the <a href=\"%2$s\">system status page</a>. If in doubt, check with the author of the theme."
-msgstr "<strong>O seu tema (%1$s) contém cópias de ficheiros personalizados do WooCommerce desactualizadas.</strong> Estes ficheiros necessitam de ser actualizados de forma a assegurar que são compatíveis com o versão actual do WooCommerce. Poderá ver quais os ficheiros afectados na <a href=\"%2$s\">página de estado do sistema</a>. Em caso de dúvidas, confirme com o autor do tema."
 
 #: includes/api/class-wc-rest-system-status-controller.php:988
 msgctxt "Page setting"
@@ -20524,16 +20528,16 @@ msgstr "Código fonte no Github"
 msgid "WordPress.org project"
 msgstr "Página no WordPress.org"
 
-#. translators: %s: Documentation URL
-#: includes/admin/class-wc-admin-help.php:47
-msgid "Should you need help understanding, using, or extending WooCommerce, <a href=\"%s\">please read our documentation</a>. You will find all kinds of resources including snippets, tutorials and much more."
-msgstr "Se necessitar de ajuda para compreender, utilizar ou extender o WooCommerce, <a href=\"%s\">por favor leia a documentação</a>. Irá encontrar todos os tipos de recursos, incluíndo código de exemplo, tutoriais e muito mais."
-
 #. translators: 1: GitHub issues URL 2: GitHub contribution guide URL 3: System
 #. status report URL
 #: includes/admin/class-wc-admin-help.php:68
 msgid "If you find a bug within WooCommerce core you can create a ticket via <a href=\"%1$s\">Github issues</a>. Ensure you read the <a href=\"%2$s\">contribution guide</a> prior to submitting your report. To help us solve your issue, please be as descriptive as possible and include your <a href=\"%3$s\">system status report</a>."
 msgstr "Caso você encontre algum erro no código do WooCommerce você pode criar um ticket no <a href=\"%1$s\">fórum do Github</a>. Assegure-se de ler o <a href=\"%2$s\">guia de contribuição</a> antes de reportar qualquer coisa. Seja o mais descritivo possível e inclua o seu <a href=\"%3$s\">relatório de estado do sistema</a>."
+
+#. translators: %s: Documentation URL
+#: includes/admin/class-wc-admin-help.php:47
+msgid "Should you need help understanding, using, or extending WooCommerce, <a href=\"%s\">please read our documentation</a>. You will find all kinds of resources including snippets, tutorials and much more."
+msgstr "Se necessitar de ajuda para compreender, utilizar ou extender o WooCommerce, <a href=\"%s\">por favor leia a documentação</a>. Irá encontrar todos os tipos de recursos, incluíndo código de exemplo, tutoriais e muito mais."
 
 #: includes/shipping/legacy-local-pickup/class-wc-shipping-legacy-local-pickup.php:105
 #: includes/shipping/local-pickup/class-wc-shipping-local-pickup.php:31

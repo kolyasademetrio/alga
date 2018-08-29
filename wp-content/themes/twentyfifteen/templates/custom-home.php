@@ -83,7 +83,7 @@
                             <ul class="recommended__categoryList">
                                 <?php
                                 foreach ($all_categories as $cat) :
-                                    if($cat->category_parent == 0) :
+                                    if($cat->category_parent == 0  && $cat->count > 0) :
                                         $category_id = $cat->term_id;
                                         ?>
                                         <li class="recommended__categoryItem">
@@ -146,6 +146,18 @@
                 </div>
             </div>
         </div>
+
+        <div class="container recommended__container">
+            <div class="row recommended__row">
+                <div class="recommended__col col-xs-12">
+                    <div class="recommended__btnWrap rayBtn__wrap">
+                        <a href="<?php echo get_permalink( get_option('woocommerce_shop_page_id')); ?>" class="reccomended__btnLink homepage__rayBtn">
+                            <?php echo CFS()->get('recommended__btn_text'); ?>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 <?php endif; ?>
@@ -154,7 +166,13 @@
 
 
 <?php if ( CFS()->get('movie_show_homepage_block') ) : ?>
-    <div class="movietiphome">
+    <?php
+    if ( !empty(CFS()->get('movietiphome_bg')) ) :
+        $movietiphome_bg_url = CFS()->get('movietiphome_bg');
+        $movietiphome_bg_styles = 'background: url('.$movietiphome_bg_url.') no-repeat center top;-webkit-background-size: 100% 100%;background-size: 100% 100%;';
+    endif;
+    ?>
+    <div class="movietiphome" style="<?php echo $movietiphome_bg_styles; ?>">
         <?php if ( !empty( CFS()->get('movietiphome_title')) ) : ?>
         <div class="container movietiphome__titleContainer">
             <div class="row movietiphome__titleRow">
@@ -209,13 +227,86 @@
 
 
 
+<?php if ( CFS()->get('howitwork_homepage_show') ) :?>
+    <div class="howitwork">
+        <?php if ( !empty(trim( CFS()->get('howitwork_title'))) ) : ?>
+            <div class="container howitworkTitle__container">
+                <div class="row howitworkTitle__row">
+                    <div class="col-xs-12 howitworkTitle__col">
+                        <div class="howitworkTitle__inner">
+                            <h3 class="howitwork__title home__sectionTitle">
+                                <?php cf('howitwork_title'); ?>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <?php endif; ?>
+
+        <div class="container howitwork__container">
+            <div class="row howitwork__row">
+                <div class="col-xs-12 howitwork__col">
+                    <div class="howitwork__inner">
+                        <div class="howitwork__desktop">
+                            <div class="howitwork__innerRow">
+                                <?php printHowitworkItem([4]); ?>
+                            </div>
+                            <div class="howitwork__innerRow">
+                                <?php printHowitworkItem([3, 5]); ?>
+                            </div>
+                            <div class="howitwork__innerRow">
+                                <?php printHowitworkItem([2, 6]); ?>
+                            </div>
+                            <div class="howitwork__innerRow">
+                                <?php printHowitworkItem([1, 7]); ?>
+                            </div>
+                            <div class="howitwork__innerRow">
+                                <div class="howitwork__btnWrap rayBtn__wrap">
+                                    <a href="#headerMiddle__pointsPopup" class="howitwork__btnLink homepage__rayBtn">
+                                        <?php cf('howitwork_btn_text'); ?>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <?php if ( !empty(trim( CFS()->get('howitwork_bg_img') )) ) : ?>
+                                <div class="howitwork__BGinner">
+                                    <img src="<?php cf('howitwork_bg_img'); ?>" alt="" class="howitwork__BGimg">
+                                </div>
+                            <?php endif; ?>
+                        </div>
+
+                        <div class="howitwork__mobile">
+                            <div class="howitwork__innerRow">
+                                <?php printHowitworkItem([1, 2, 3, 4, 5, 6, 7]); ?>
+                            </div>
+                            <div class="howitwork__innerRow">
+                                <div class="howitwork__btnWrap rayBtn__wrap">
+                                    <a href="#headerMiddle__pointsPopup" class="howitwork__btnLink homepage__rayBtn">
+                                        <?php cf('howitwork_btn_text'); ?>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>
+
+
+
 <?php if ( CFS()->get('feedback_show_homepage_block') ) :?>
 
     <?php
     $feedback_home_title = CFS()->get('feedback_home_title');
+    if ( !empty(CFS()->get('feedbackhome_bg')) ) :
+        $feedbackhome_bg_url = CFS()->get('feedbackhome_bg');
+        $feedbackhome_bg_styles = 'background: url('.$feedbackhome_bg_url.') no-repeat center top;-webkit-background-size: 100% 100%;background-size: 100% 100%;';
+    endif;
     ?>
 
-    <div class="feedbackhome">
+    <div class="feedbackhome" style="<?php echo $feedbackhome_bg_styles; ?>">
         <?php if ( !empty($feedback_home_title) ) : ?>
         <div class="container feedbackhomeTitle__container">
             <div class="row feedbackhomeTitle__row">
@@ -280,6 +371,18 @@
             <?php
         }
         ?>
+
+        <div class="container feedback__container">
+            <div class="row feedback__row">
+                <div class="feedback__col col-xs-12">
+                    <div class="feedback__btnWrap rayBtn__wrap">
+                        <a href="/feedback" class="feedback__btnLink homepage__rayBtn">
+                            <?php echo CFS()->get('feedback__btn_text'); ?>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 <?php endif; ?>
@@ -331,8 +434,53 @@
                 ?>
             </div>
         </div>
+
+        <div class="container advants__container">
+            <div class="row advants__row">
+                <div class="advants__col col-xs-12">
+                    <div class="advants__btnWrap rayBtn__wrap">
+                        <a href="#headerMiddle__pointsPopup" class="advants__btnLink homepage__rayBtn">
+                            <?php echo CFS()->get('advants__btn_text'); ?>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 <?php endif; ?>
+
+
+
+<?php if ( CFS()->get('inst_show_homepage') ) :?>
+
+    <?php
+    if ( !empty(CFS()->get('inst_bg')) ) :
+        $inst_bg_url = CFS()->get('inst_bg');
+        $inst_bg_styles = 'background: url('.$inst_bg_url.') no-repeat center top;-webkit-background-size: 100% 100%;background-size: 100% 100%;';
+    endif;
+    ?>
+
+    <div class="inst" style="<?php echo $inst_bg_styles; ?>">
+        <?php if ( !empty(trim(CFS()->get('inst_title'))) ) :?>
+        <div class="container instTitle__container">
+            <div class="row instTitle__row">
+                <div class="col-xs-12 instTitle__col">
+                    <div class="instTitle__inner">
+                        <h3 class="inst__title home__sectionTitle">
+                            <?php echo trim(CFS()->get('inst_title')); ?>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php endif; ?>
+        <div class="inst__inner">
+            <?php echo do_shortcode('[instagram-feed]') ?>
+        </div>
+    </div>
+
+<?php endif; ?>
+
 
 <?php get_footer(); ?>

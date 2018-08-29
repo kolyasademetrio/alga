@@ -77,14 +77,18 @@ if ( empty( $product ) || ! $product->is_visible() ) {
             <?php endif; ?>
 
             <div class="good__itemPrices">
-                <?php if ( !empty(trim($product->get_sale_price())) ) : ?>
+                <?php if ( empty(trim($product->get_sale_price())) ) : ?>
+                    <span class="good__itemRegularPrice">
+                        <span class="good__itemRegularPriceValue"><?php echo $product->get_regular_price() ?></span><span class="good__itemRegularPriceCur"><?php echo get_woocommerce_currency_symbol(); ?></span>
+                    </span>
+                <?php else : ?>
                     <span class="good__itemSalePrice">
-                        <?php echo $product->get_sale_price() . get_woocommerce_currency_symbol(); ?>
+                        <span><?php echo $product->get_regular_price(); ?></span><span><?php echo get_woocommerce_currency_symbol(); ?></span>
+                    </span>
+                    <span class="good__itemRegularPrice">
+                        <span class="good__itemRegularPriceValue"><?php echo $product->get_sale_price() ?></span><span class="good__itemRegularPriceCur"><?php echo get_woocommerce_currency_symbol(); ?></span>
                     </span>
                 <?php endif; ?>
-                <span class="good__itemRegularPrice">
-                    <?php echo $product->get_regular_price() . get_woocommerce_currency_symbol(); ?>
-                </span>
             </div>
         </div>
 

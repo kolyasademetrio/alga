@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WooCommerce - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2018-08-15 21:55:51+0000\n"
+"PO-Revision-Date: 2018-08-19 20:35:00+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -119,6 +119,10 @@ msgstr "Якщо у вас є код купона, будь ласка, заст
 msgid "eCheck ending in %1$s"
 msgstr "eCheck закінчується в%1$s"
 
+#: includes/gateways/paypal/includes/settings-paypal.php:94
+msgid "PayPal allows us to send one address. If you are using PayPal for shipping labels you may prefer to send the shipping address rather than billing. Turning this option off may prevent PayPal Seller protection from applying."
+msgstr "PayPal дозволяє нам надсилати одну адресу. Якщо ви використовуєте PayPal для доставки етикетки, ви можете відправити адресу відправлення, а не платіж. Вимкнення цього параметра може запобігти застосуванню захисту PayPal від продавця."
+
 #. Translators: %s: page name.
 #: includes/customizer/class-wc-shop-customizer.php:787
 msgid "%s page"
@@ -178,6 +182,41 @@ msgstr "Лог подій PayPal, таких як запити IPN, всеред
 #: includes/class-wc-privacy.php:116
 msgid "We accept payments through PayPal. When processing payments, some of your data will be passed to PayPal, including information required to process or support the payment, such as the purchase total and billing information."
 msgstr "Ми приймаємо платежі через PayPal. Під час обробки платежів деякі Ваші дані будуть передані PayPal, включаючи інформацію, необхідну для обробки або підтримки платіжної інформації, таку як загальна вартість покупки та платіжна інформація."
+
+#. translators: %s: Link to WC system status page
+#: includes/gateways/paypal/class-wc-gateway-paypal.php:45
+msgid "PayPal Standard redirects customers to PayPal to enter their payment information."
+msgstr "PayPal Standard перенаправляє клієнтів до PayPal, щоб ввести свою платіжну інформацію."
+
+#: includes/gateways/cheque/class-wc-gateway-cheque.php:32
+msgid "Take payments in person via checks. This offline gateway can also be useful to test purchases."
+msgstr "Приймайте платежі особисто через чеки. Цей автономний шлюз також може бути корисним для тестування покупок."
+
+#: includes/gateways/bacs/class-wc-gateway-bacs.php:40
+msgid "Take payments in person via BACS. More commonly known as direct bank/wire transfer"
+msgstr "Приймайте платежі особисто через BACS. Найчастіше називають прямим банком / банківським переказом"
+
+#. Translators: This is a comma-separated list of very common words that should
+#. be excluded from a search, like a, an, and the. These are usually called
+#. "stopwords". You should not simply translate these individual words into
+#. your language. Instead, look for and provide commonly accepted stopwords in
+#. your language.
+#: includes/data-stores/class-wc-data-store-wp.php:483
+msgctxt "Comma-separated list of search stopwords in your language"
+msgid "about,an,are,as,at,be,by,com,for,from,how,in,is,it,of,on,or,that,the,this,to,was,what,when,where,who,will,with,www"
+msgstr "про,є,є,як,в,бути,шляхом,ком,для,від,як,в,це,з,на,або,це,це,до,було,що,коли,де,хто,буде,з,www"
+
+#: includes/customizer/class-wc-shop-customizer.php:812
+msgid "Optionally add some text for the terms checkbox that customers must accept."
+msgstr "Необов`язково додати певний текст для умов, які повинні приймати клієнти."
+
+#: includes/customizer/class-wc-shop-customizer.php:748
+msgid "Highlight required fields with an asterisk"
+msgstr "Виділіть потрібні поля зірочкою"
+
+#: includes/customizer/class-wc-shop-customizer.php:671
+msgid "These options let you change the appearance of the WooCommerce checkout."
+msgstr "Ці параметри дозволяють змінити зовнішній вигляд Checkout WooCommerce."
 
 #: includes/class-wc-privacy.php:114
 msgid "In this subsection you should list which third party payment processors you’re using to take payments on your store since these may handle customer data. We’ve included PayPal as an example, but you should remove this if you’re not using PayPal."
@@ -539,6 +578,89 @@ msgstr "Клонування заборонено."
 msgid "%d permissions deleted"
 msgstr "%d дозволу видалено"
 
+#. translators: %d: amount of sessions
+#: includes/api/class-wc-rest-system-status-tools-controller.php:500
+msgid "Deleted all active sessions, and %d saved carts."
+msgstr "Видалено всі активні сеанси, а %d збережено візки."
+
+#: includes/api/class-wc-rest-system-status-tools-controller.php:163
+msgid "This tool will delete all customer session data from the database, including current carts and saved carts in the database."
+msgstr "Цей інструмент видаляє всі дані сеансу клієнта з бази даних, включаючи поточні візки та збережені візки в базі даних."
+
+#: includes/api/class-wc-rest-system-status-tools-controller.php:140
+msgid "This tool will delete expired download permissions and permissions with 0 remaining downloads."
+msgstr "Цей інструмент видаляє дозволи та права доступу до закінчення терміну завантаження з 0 завантажень, що залишились."
+
+#: includes/api/class-wc-rest-system-status-tools-controller.php:139
+msgid "Clean up download permissions"
+msgstr "Очистіть дозволи на завантаження"
+
+#: includes/api/class-wc-rest-system-status-tools-controller.php:138
+msgid "Used-up download permissions"
+msgstr "Використані дозволи на завантаження"
+
+#: includes/api/class-wc-rest-products-controller.php:2096
+msgid "Limit result set to products with a specific attribute. Use the taxonomy name/attribute slug."
+msgstr "Граничний результат встановлюється для продуктів з певним атрибутом. Використовуйте назву таксономії / атрибут slug."
+
+#: includes/api/class-wc-rest-product-variations-controller.php:167
+msgid "Parent product does not match current variation."
+msgstr "Батьківський продукт не відповідає поточному варіанту."
+
+#: includes/api/class-wc-rest-order-refunds-controller.php:388
+msgid "If the payment was refunded via the API."
+msgstr "Якщо платіж було повернено через API."
+
+#: includes/api/class-wc-rest-network-orders-controller.php:75
+msgid "Order total formatted for locale"
+msgstr "Сума замовлення відформатована для локалі"
+
+#: includes/api/class-wc-rest-network-orders-controller.php:63
+msgid "Name of the customer for the order"
+msgstr "Назва замовника для замовлення"
+
+#: includes/api/class-wc-rest-network-orders-controller.php:57
+msgid "URL to edit the order"
+msgstr "URL для редагування замовлення"
+
+#: includes/api/class-wc-rest-network-orders-controller.php:51
+msgid "Blog id of the record on the multisite."
+msgstr "Ідентифікатор блогу запису на мультисайті."
+
+#. translators: %s: documentation URL
+#: includes/admin/views/html-notice-secure-connection.php:18
+msgid "Your store does not appear to be using a secure connection. We highly recommend serving your entire website over an HTTPS connection to help keep customer data secure. <a href=\"%s\">Learn more here.</a>"
+msgstr "Здається, ваш магазин не використовує безпечне з&#39;єднання. Ми настійно рекомендуємо обслуговувати весь веб-сайт через HTTPS-з`єднання, щоб забезпечити безпеку даних клієнтів. <a href=\"%s\">Дізнайтеся більше тут.</a>"
+
+#. translators: %1$s: product name. %2$s product permalink
+#: includes/class-wc-cart-session.php:117
+msgid "%1$s has been removed from your cart because it has since been modified. You can add it back to your cart <a href=\"%2$s\">here</a>."
+msgstr "%1$s видалено з вашої кошика, оскільки він з моменту змінився. Ви можете додати його до кошика <a href=\"%2$s\">тут</a> ."
+
+#: includes/admin/views/html-admin-page-status-report.php:674
+msgid "WooCommerce pages"
+msgstr "WooCommerce сторінки"
+
+#: includes/admin/views/html-admin-page-status-report.php:432
+msgid "MaxMind GeoIP database requires at least PHP 5.4."
+msgstr "База даних MaxMind GeoIP вимагає принаймні PHP 5.4."
+
+#: includes/admin/views/html-admin-page-status-report.php:406
+msgid "WooCommerce database version"
+msgstr "Версія бази даних WooCommerce"
+
+#: includes/admin/views/html-admin-page-status-report.php:201
+msgid "We recommend using PHP version 7.2 or above for greater performance and security."
+msgstr "Ми рекомендуємо використовувати PHP версії 7.2 або вище для більшої продуктивності та безпеки."
+
+#: includes/admin/views/html-admin-page-status-report.php:199
+msgid "WooCommerce will run under this version of PHP, however, it has reached end of life. We recommend using PHP version 7.2 or above for greater performance and security."
+msgstr "WooCommerce буде працювати під цією версією PHP, однак він досяг кінця життя. Ми рекомендуємо використовувати PHP версії 7.2 або вище для більшої продуктивності та безпеки."
+
+#: includes/admin/views/html-admin-page-status-report.php:197
+msgid "WooCommerce will run under this version of PHP, however, some features such as geolocation are not compatible. Support for this version will be dropped in the next major release. We recommend using PHP version 7.2 or above for greater performance and security."
+msgstr "WooCommerce буде працювати під цією версією PHP, однак деякі функції, такі як геолокація, несумісні. Підтримка цієї версії буде виключена в наступному головному випуску. Ми рекомендуємо використовувати PHP версії 7.2 або вище для більшої продуктивності та безпеки."
+
 #. Translators: %1$s: Current version, %2$s: New version
 #: includes/admin/views/html-admin-page-status-report.php:107
 msgid "%1$s - There is a newer version of WordPress available (%2$s)"
@@ -587,6 +709,66 @@ msgstr "Безпечне оформлення"
 msgid "Legacy API"
 msgstr "Застарілий API"
 
+#: includes/admin/views/html-admin-page-status-report.php:162
+msgid "Displays whether or not WordPress is using an external object cache."
+msgstr "Відображає, чи використовує WordPress кеш зовнішнього об'єкта."
+
+#: includes/admin/views/html-admin-page-status-report.php:161
+msgid "External object cache"
+msgstr "Зовнішній кеш об'єктів"
+
+#: includes/admin/views/html-admin-page-status-report.php:145
+msgid "WordPress cron"
+msgstr "WordPress cron"
+
+#: includes/admin/views/html-admin-page-status-report.php:134
+msgid "WordPress debug mode"
+msgstr "WordPress режим налагодження"
+
+#: includes/admin/views/html-admin-page-status-report.php:120
+msgid "WordPress memory limit"
+msgstr "WordPress ліміт пам'яті"
+
+#: includes/admin/views/html-admin-page-status-report.php:115
+msgid "WordPress multisite"
+msgstr "WordPress мультисайт"
+
+#: includes/admin/views/html-admin-page-status-report.php:87
+msgid "WordPress version"
+msgstr "WordPress версія"
+
+#: includes/admin/settings/class-wc-settings-advanced.php:213
+msgid "Account endpoints"
+msgstr "Кінцеві точки облікового запису"
+
+#: includes/admin/settings/class-wc-settings-accounts.php:205
+msgid "Retain completed orders for a specified duration before anonymizing the personal data within them."
+msgstr "Збережіть завершені замовлення на певну тривалість, перш ніж анонізувати особисті дані в них."
+
+#: includes/admin/settings/class-wc-settings-accounts.php:204
+msgid "Retain completed orders"
+msgstr "Зберегти виконані замовлення"
+
+#: includes/admin/settings/class-wc-settings-accounts.php:196
+msgid "Cancelled orders are unpaid and may have been cancelled by the store owner or customer. They will be trashed after the specified duration."
+msgstr "Скасовані замовлення не оплачуються та можуть бути скасовані власником магазину або замовником. Вони будуть вивантажені після вказаної тривалості."
+
+#: includes/admin/settings/class-wc-settings-accounts.php:195
+msgid "Retain cancelled orders"
+msgstr "Зберігати скасовані замовлення"
+
+#: includes/admin/settings/class-wc-settings-accounts.php:187
+msgid "Failed orders are unpaid and may have been abandoned by the customer. They will be trashed after the specified duration."
+msgstr "Невиконані замовлення не оплачуються, і, можливо, вони були залишені замовником. Вони будуть вивантажені після вказаної тривалості."
+
+#: includes/admin/settings/class-wc-settings-accounts.php:186
+msgid "Retain failed orders"
+msgstr "Зберігати невдалих замовлень"
+
+#: includes/admin/settings/class-wc-settings-accounts.php:178
+msgid "Pending orders are unpaid and may have been abandoned by the customer. They will be trashed after the specified duration."
+msgstr "Очікувані замовлення не оплачуються та можуть бути залишені замовником. Вони будуть вивантажені після вказаної тривалості."
+
 #: includes/admin/settings/class-wc-settings-accounts.php:118
 #: includes/customizer/class-wc-shop-customizer.php:756
 #: includes/customizer/class-wc-shop-customizer.php:799
@@ -621,6 +803,122 @@ msgstr[0] "Видалено особисті дані із замовлення 
 msgstr[1] "Видалено особисті дані із замовлень %d."
 msgstr[2] "Видалено особисті дані із замовлення %d."
 
+#: includes/admin/settings/class-wc-settings-accounts.php:177
+msgid "Retain pending orders "
+msgstr "Зберегти очікувані замовлення"
+
+#: includes/admin/settings/class-wc-settings-accounts.php:166
+msgid "Inactive accounts are those which have not logged in, or placed an order, for the specified duration. They will be deleted. Any orders will be converted into guest orders."
+msgstr "Неактивні облікові записи - це ті, які не ввійшли або не розмістили замовлення на вказану тривалість. Вони будуть видалені. Будь-які замовлення будуть конвертовані в гостьові замовлення."
+
+#: includes/admin/settings/class-wc-settings-accounts.php:165
+msgid "Retain inactive accounts "
+msgstr "Збереження неактивних облікових записів"
+
+#: includes/admin/settings/class-wc-settings-accounts.php:160
+msgid "Choose how long to retain personal data when it's no longer needed for processing. Leave the following options blank to retain this data indefinitely."
+msgstr "Виберіть, як довго зберігати особисті дані, коли воно більше не потрібне для обробки. Залиште наступні опції порожніми, щоб зберегти ці дані на невизначений час."
+
+#: includes/admin/settings/class-wc-settings-accounts.php:159
+msgid "Personal data retention"
+msgstr "Збереження особистих даних"
+
+#: includes/admin/settings/class-wc-settings-accounts.php:146
+msgid "Checkout privacy policy"
+msgstr "Політика конфіденційності Checkout"
+
+#. translators: %s privacy policy page name and link
+#: includes/admin/settings/class-wc-settings-accounts.php:140
+#: includes/wc-template-functions.php:760
+msgid "Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our %s."
+msgstr "Ваші особисті дані будуть використані для підтримки вашого досвіду на цьому веб-сайті, для управління доступом до вашого облікового запису та для інших цілей, описаних у нашому %s."
+
+#: includes/admin/settings/class-wc-settings-accounts.php:137
+msgid "Optionally add some text about your store privacy policy to show on account registration forms."
+msgstr "Необов'язково додати текст про політику конфіденційності вашого магазину, щоб він відображався на реєстраційній формі облікового запису."
+
+#: includes/admin/settings/class-wc-settings-accounts.php:136
+msgid "Registration privacy policy"
+msgstr "Реєстраційна політика конфіденційності"
+
+#: includes/admin/settings/class-wc-settings-accounts.php:126
+msgid "Choose a page to act as your privacy policy."
+msgstr "Виберіть сторінку, щоб діяти як політика конфіденційності."
+
+#: includes/admin/settings/class-wc-settings-accounts.php:125
+msgid "Privacy page"
+msgstr "Сторінка конфіденційності"
+
+#: includes/admin/settings/class-wc-settings-accounts.php:121
+msgid "This section controls the display of your website privacy policy. The privacy notices below will not show up unless a privacy page is first set."
+msgstr "Цей розділ керує показом політики конфіденційності веб-сайту. Зазначені нижче відомості про конфіденційність не відображатимуться, якщо не встановлено першу сторінку конфіденційності."
+
+#. Translators: %s URL to erasure request screen.
+#: includes/admin/settings/class-wc-settings-accounts.php:106
+msgid "When handling an <a href=\"%s\">account erasure request</a>, should access to downloadable files be revoked and download logs cleared?"
+msgstr "Під час обробки <a href=\"%s\">запиту на видалення облікового запису</a> слід скасувати доступ до завантажених файлів та очистити журнали завантаження?"
+
+#: includes/admin/settings/class-wc-settings-accounts.php:104
+msgid "Remove access to downloads"
+msgstr "Видалити доступ до завантажень"
+
+#. Translators: %s URL to erasure request screen.
+#: includes/admin/settings/class-wc-settings-accounts.php:96
+msgid "When handling an <a href=\"%s\">account erasure request</a>, should personal data within orders be retained or removed?"
+msgstr "Під час обробки <a href=\"%s\">запиту на стирання облікового запису</a> слід зберігати чи видаляти особисті дані в замовленнях?"
+
+#: includes/admin/settings/class-wc-settings-accounts.php:94
+msgid "Remove personal data from orders"
+msgstr "Видалити особисті дані з замовлень"
+
+#: includes/admin/settings/class-wc-settings-accounts.php:93
+msgid "Account erasure requests"
+msgstr "Запити на видалення облікового запису"
+
+#: includes/admin/settings/class-wc-settings-accounts.php:85
+msgid "When creating an account, automatically generate an account password"
+msgstr "При створенні облікового запису автоматично генерується пароль облікового запису"
+
+#: includes/admin/settings/class-wc-settings-accounts.php:77
+msgid "When creating an account, automatically generate a username from the customer's email address"
+msgstr "Створюючи обліковий запис, автоматично генерує ім'я користувача з електронної адреси клієнта"
+
+#: includes/admin/settings/class-wc-settings-accounts.php:69
+msgid "Allow customers to create an account on the \"My account\" page"
+msgstr "Дозволити клієнтам створювати обліковий запис на сторінці \"Мій обліковий запис\""
+
+#: includes/admin/settings/class-wc-settings-accounts.php:61
+msgid "Allow customers to create an account during checkout"
+msgstr "Дозволити клієнтам створювати обліковий запис під час оформлення замовлення"
+
+#: includes/admin/settings/class-wc-settings-accounts.php:52
+msgid "Allow customers to log into an existing account during checkout"
+msgstr "Дозволити клієнтам входити в існуючий обліковий запис під час оформлення замовлення"
+
+#: includes/admin/settings/class-wc-settings-accounts.php:43
+msgid "Allow customers to place orders without an account"
+msgstr "Дозволити клієнтам розміщувати замовлення без облікового запису"
+
+#: includes/admin/settings/class-wc-settings-accounts.php:42
+msgid "Guest checkout"
+msgstr "Оформлення замовлень гостей"
+
+#: includes/admin/settings/class-wc-settings-accounts.php:24
+msgid "Accounts &amp; Privacy"
+msgstr "Облікові записи &amp; Конфіденційність"
+
+#: includes/admin/meta-boxes/class-wc-meta-box-coupon-data.php:266
+msgid "Allowed emails"
+msgstr "Дозволені email"
+
+#: includes/admin/importers/views/html-product-csv-import-form.php:78
+msgid "Use previous column mapping preferences?"
+msgstr "Використовувати попередні параметри відображення стовпців?"
+
+#: includes/admin/meta-boxes/class-wc-meta-box-coupon-data.php:268
+msgid "Whitelist of billing emails to check against when an order is placed. Separate email addresses with commas. You can also use an asterisk (*) to match parts of an email. For example \"*@gmail.com\" would match all gmail addresses."
+msgstr "Білий список біллінгових електронних листів для перевірки під час розміщення замовлення. Окремі адреси електронної пошти з комами. Ви також можете використовувати зірочку (*), щоб відповідати частині електронного листа. Наприклад, &quot;*@gmail.com&quot; відповідатиме всім адресами gmail."
+
 #: includes/admin/class-wc-admin-setup-wizard.php:2172
 msgid "Review Settings"
 msgstr "Огляд Налаштувань"
@@ -645,6 +943,114 @@ msgstr "MailChimp для WooCommerce"
 #: includes/admin/class-wc-admin-setup-wizard.php:1771
 msgid "MailChimp icon"
 msgstr "Піктограма MailChimp"
+
+#: includes/admin/class-wc-admin-setup-wizard.php:2175
+msgid "View &amp; Customize"
+msgstr "Перегляд &amp; Налаштування"
+
+#: includes/admin/class-wc-admin-setup-wizard.php:2169
+msgid "Visit Dashboard"
+msgstr "Перейти в Майстерню"
+
+#: includes/admin/class-wc-admin-setup-wizard.php:2137
+msgid "Create some products"
+msgstr "Створення деяких продуктів"
+
+#: includes/admin/class-wc-admin-setup-wizard.php:1920
+msgid "Continue with WooCommerce Services"
+msgstr "Продовжуйте роботу WooCommerce Services"
+
+#: includes/admin/class-wc-admin-setup-wizard.php:1919
+msgid "Connect your store to activate WooCommerce Services"
+msgstr "Підключіть ваш магазин, щоб активувати послуги WooCommerce"
+
+#: includes/admin/class-wc-admin-setup-wizard.php:1908
+msgid "Thanks for using Jetpack! Your store is almost ready: to activate services like %s, just connect your store."
+msgstr "Дякую за користування Jetpack! Ваш магазин майже готовий: активувати такі послуги, як %s, просто підключіть свій магазин."
+
+#: includes/admin/class-wc-admin-setup-wizard.php:1769
+msgid "Join the 16 million customers who use MailChimp. Sync list and store data to send automated emails, and targeted campaigns."
+msgstr "Приєднуйтесь до 16 мільйонів клієнтів, які користуються MailChimp. Синхронізувати список та зберігати дані, щоб надсилати автоматичні електронні листи та цільові кампанії."
+
+#: includes/admin/class-wc-admin-setup-wizard.php:1760
+msgid "automated taxes icon"
+msgstr "автоматичний податок icon"
+
+#: includes/admin/class-wc-admin-setup-wizard.php:1758
+msgid "Save time and errors with automated tax calculation and collection at checkout. Powered by WooCommerce Services and Jetpack."
+msgstr "Заощаджуйте час та помилки при автоматичному розрахунку податку та зборі при перевірці. Powered by WooCommerce Services та Jetpack."
+
+#: includes/admin/class-wc-admin-setup-wizard.php:1750
+msgid "Storefront icon"
+msgstr "Значок магазину"
+
+#: includes/admin/class-wc-admin-setup-wizard.php:1745
+msgid "Design your store with deep WooCommerce integration. If toggled on, we’ll install <a href=\"https://woocommerce.com/storefront/\" target=\"_blank\" rel=\"noopener noreferrer\">Storefront</a>, and your current theme <em>%s</em> will be deactivated."
+msgstr "Розробіть свій магазин за допомогою інтеграції WooCommerce. Якщо включено, ми встановимо <a href=\"https://woocommerce.com/storefront/\" target=\"_blank\" rel=\"noopener noreferrer\">Storefront</a> , і поточна тема <em> %s</em> буде деактивована."
+
+#: includes/admin/class-wc-admin-setup-wizard.php:1733
+msgid "Enhance your store with these recommended features."
+msgstr "Підключіть свій магазин до Jetpack, щоб увімкнути додаткові функції"
+
+#: includes/admin/class-wc-admin-setup-wizard.php:1731
+msgid "Select from the list below to enable automated taxes and MailChimp’s best-in-class email services — and design your store with our official, free WooCommerce theme."
+msgstr "Виберіть зі списку нижче, щоб увімкнути автоматичні податки та поштові служби BestClass MailChimp - і розробити свій магазин за допомогою офіційної безкоштовної теми WooCommerce."
+
+#: includes/admin/class-wc-admin-setup-wizard.php:1721
+msgid "Recommended for All WooCommerce Stores"
+msgstr "Рекомендовано для всіх магазинів WooCommerce"
+
+#: includes/admin/class-wc-admin-setup-wizard.php:1323
+msgid "The PayFast extension for WooCommerce enables you to accept payments by Credit Card and EFT via one of South Africa’s most popular payment gateways. No setup fees or monthly subscription costs."
+msgstr "Розширення PayFast для WooCommerce дозволяє приймати платежі за допомогою кредитної картки та електронної пошти через один із найбільш популярних платіжних шлюзів у Південній Африці. Без встановлення або місячні витрати на підписку."
+
+#: includes/admin/class-wc-admin-setup-wizard.php:1322
+msgid "WooCommerce PayFast Gateway"
+msgstr "WooCommerce PayFast Gateway"
+
+#: includes/admin/class-wc-admin-setup-wizard.php:1315
+msgid "The eWAY extension for WooCommerce allows you to take credit card payments directly on your store without redirecting your customers to a third party site to make payment."
+msgstr "Розширення eWAY для WooCommerce дозволяє здійснювати платежі за допомогою кредитних карток безпосередньо у вашому магазині, не перенаправляючи клієнтів на сторонній веб-сайт, щоб здійснити платіж."
+
+#: includes/admin/class-wc-admin-setup-wizard.php:1314
+msgid "WooCommerce eWAY Gateway"
+msgstr "WooCommerce eWAY Gateway"
+
+#: includes/admin/class-wc-admin-setup-wizard.php:1306
+msgid "WooCommerce Square"
+msgstr "WooCommerce Square"
+
+#: includes/admin/class-wc-admin-setup-wizard.php:1298
+msgid "Klarna Payments for WooCommerce"
+msgstr "Кларка платежів для WooCommerce"
+
+#: includes/admin/class-wc-admin-setup-wizard.php:1290
+msgid "Klarna Checkout for WooCommerce"
+msgstr "Кларка Checkout для WooCommerce"
+
+#: includes/admin/class-wc-admin-setup-wizard.php:1270
+msgid "Enter your email address and we'll authenticate payments for you. Powered by WooCommerce Services and Jetpack."
+msgstr "Введіть свою адресу електронної пошти, і ми будемо автентифікувати платежі за вас. Powered by WooCommerce Services та Jetpack."
+
+#: includes/admin/class-wc-admin-setup-wizard.php:1250
+msgid "WooCommerce PayPal Express Checkout Gateway"
+msgstr "WooCommerce Шлюз Checkout PayPal Express"
+
+#: includes/admin/class-wc-admin-setup-wizard.php:1244
+msgid "Enter your email address and we'll handle account creation. Powered by WooCommerce Services and Jetpack."
+msgstr "Введіть свою електронну адресу, і ми будемо обробляти створення облікового запису. Powered by WooCommerce Services та Jetpack."
+
+#: includes/admin/class-wc-admin-setup-wizard.php:1225
+msgid "WooCommerce Stripe Gateway"
+msgstr "Шлюз WoCommerce Stripe"
+
+#: includes/admin/class-wc-admin-setup-wizard.php:760
+msgid "Powered by WooCommerce Services and Jetpack."
+msgstr "Powered by WooCommerce Services та Jetpack."
+
+#: includes/admin/class-wc-admin-setup-wizard.php:723
+msgid "The following plugins will be installed and activated for you:"
+msgstr "Наступні плагіни будуть встановлені та активовані для вас:"
 
 #: includes/admin/class-wc-admin-setup-wizard.php:170
 msgid "Recommended"
@@ -1067,6 +1473,44 @@ msgstr "Ключів не знайдено."
 msgid "Return to payments"
 msgstr "Повернутися до платежів"
 
+#: includes/admin/class-wc-admin-setup-wizard.php:488
+msgid "Help WooCommerce improve with usage tracking."
+msgstr "Допоможіть WooCommerce покращити відстеження використання."
+
+#. translators: 1: currency name 2: currency symbol, 3: currency code
+#: includes/admin/class-wc-admin-setup-wizard.php:448
+msgid "%1$s (%2$s / %3$s)"
+msgstr "%1$s (%2$s / %3$s)"
+
+#: includes/admin/class-wc-admin-setup-wizard.php:428
+msgid "What currency do you accept payments in?"
+msgstr "Якою валютою ви приймаєте платежі?"
+
+#: includes/admin/class-wc-admin-setup-wizard.php:417
+msgid "Choose a state&hellip;"
+msgstr "Виберіть регіон&hellip;"
+
+#: includes/admin/class-wc-admin-notices.php:139
+#: includes/emails/class-wc-email.php:813
+msgid "You don&#8217;t have permission to do this."
+msgstr "Ви не маєте дозволу на це."
+
+#: includes/admin/class-wc-admin-importers.php:207
+msgid "Insufficient privileges to import products."
+msgstr "Недостатньо пільг для імпорту товарів."
+
+#: includes/admin/class-wc-admin-help.php:81
+msgid "Further education"
+msgstr "подальша освіта"
+
+#: includes/admin/class-wc-admin-help.php:80
+msgid "If you would like to learn about using WooCommerce from an expert, consider a WooCommerce course to further your education."
+msgstr "Якщо ви хочете дізнатися про використання WooCommerce від експерта, розгляньте курс WooCommerce для подальшої освіти."
+
+#: includes/admin/class-wc-admin-exporters.php:129
+msgid "Insufficient privileges to export products."
+msgstr "Недостатньо пільг на експорт товарів."
+
 #: includes/admin/class-wc-admin-setup-wizard.php:492
 msgid "Gathering usage data allows us to make WooCommerce better &mdash; your store will be considered as we evaluate new features, judge the quality of an update, or determine if an improvement makes sense. If you would rather opt-out, and do not check this box, we will not know this store exists and we will not collect any usage data."
 msgstr "Встановлюючи цей прапорець, ви допомагаєте покращувати WooCommerce: інформація про ваш магазин буде використовуватися для оцінки нових функцій, якості оновлень і доцільності поліпшень. Якщо ви не поставите прапорець, ми не будемо знати про існування вашого магазину і не будемо збирати дані про його використання."
@@ -1336,6 +1780,39 @@ msgstr "Переглянути товари в групі &ldquo;%s&rdquo;"
 msgid "Buy &ldquo;%s&rdquo;"
 msgstr "Купити &quot; %s&quot;"
 
+#: includes/gateways/paypal/includes/settings-paypal.php:65
+msgid "Send notifications when an IPN is received from PayPal indicating refunds, chargebacks and cancellations."
+msgstr "Надсилати сповіщення, коли IPN отримано від PayPal, що вказує на відшкодування, відкликання платежу та анулювання платежів."
+
+#. translators: %s: Link to PayPal sandbox testing guide page
+#: includes/gateways/paypal/class-wc-gateway-paypal.php:67
+msgid "SANDBOX ENABLED. You can use sandbox testing accounts only. See the <a href=\"%s\">PayPal Sandbox Testing Guide</a> for more details."
+msgstr "SANDBOX ВКЛЮЧЕНО. Ви можете використовувати лише облікові записи для тестування на ізотермічній основі. Докладніше див. В <a href=\"%s\">Посібнику з тестування Пісочниці PayPal</a> ."
+
+#: includes/data-stores/class-wc-customer-download-log-data-store.php:93
+msgid "Invalid download log: not found."
+msgstr "Невірний журнал завантажень: не знайдено."
+
+#: includes/data-stores/class-wc-customer-download-log-data-store.php:84
+msgid "Invalid download log: no ID."
+msgstr "Невірний журнал завантажень: немає ID."
+
+#: includes/data-stores/class-wc-customer-download-log-data-store.php:67
+msgid "Unable to insert download log entry in database."
+msgstr "Неможливо вставити запис журналу завантаження в базу даних."
+
+#: includes/customizer/class-wc-shop-customizer.php:651
+msgid "Images will display using the aspect ratio in which they were uploaded"
+msgstr "Зображення відображатимуться, використовуючи формат співвідношення, в якому вони були завантажені"
+
+#: includes/customizer/class-wc-shop-customizer.php:333
+msgid "Enable store notice"
+msgstr "Увімкнути повідомлення про магазин"
+
+#: includes/customizer/class-wc-shop-customizer.php:323
+msgid "If enabled, this text will be shown site-wide. You can use it to show events or promotions to visitors!"
+msgstr "Якщо цей параметр увімкнено, цей текст відображатиметься на загальнодоступному сайті. Ви можете використовувати його для показу подій або рекламних акцій відвідувачам!"
+
 #: includes/admin/reports/class-wc-report-downloads.php:201
 msgid "Filter by IP address"
 msgstr "Фільтрувати за IP адресою"
@@ -1459,6 +1936,28 @@ msgstr "Помилка копіювання до буферу обміну. Ва
 msgid "Postcodes containing wildcards (e.g. CB23*) or fully numeric ranges (e.g. <code>90210...99000</code>) are also supported. Please see the shipping zones <a href=\"%s\" target=\"_blank\">documentation</a>) for more information."
 msgstr "Підтримуються поштові індекси, що містять підстановки (наприклад, CB23 *) або повні цифрові діапазони (наприклад, <code>90210...99000</code> ). Докладнішу інформацію див. в <a href=\"%s\" target=\"_blank\">документації</a> до зон доставки ."
 
+#: includes/api/class-wc-rest-products-controller.php:2066
+msgid "Limit result set to products with specific SKU(s). Use commas to separate."
+msgstr "Граничний результат встановлюється для продуктів із конкретними одиницями товару. Використовуйте кому, щоб розділити."
+
+#: includes/admin/reports/class-wc-report-downloads.php:86
+msgid "Permission ID"
+msgstr "ID дозволу"
+
+#: includes/admin/reports/class-wc-admin-report.php:673
+msgid "Confirm navigation"
+msgstr "Підтвердьте навігацію"
+
+#. translators: %1$s: open link, %2$s: close link
+#: includes/admin/reports/class-wc-admin-report.php:672
+msgid "This report link has expired. %1$sClick here to view the filtered report%2$s."
+msgstr "Термін дії посилання на цей звіт закінчився. %1$sНатисніть тут, щоб переглянути відфільтрований звіт%2$s."
+
+#. translators: 1: date 2: time
+#: includes/admin/meta-boxes/class-wc-meta-box-order-data.php:210
+msgid "Paid on %1$s @ %2$s"
+msgstr "Оплачено на %1$s @ %2$s"
+
 #: includes/admin/list-tables/class-wc-admin-list-table-orders.php:140
 msgid "Change status to completed"
 msgstr "Змінити статус на виконано"
@@ -1501,33 +2000,468 @@ msgctxt "%s = human-readable time difference"
 msgid "%s ago"
 msgstr "%s тому"
 
+#: includes/admin/importers/views/html-product-csv-import-form.php:60
+msgid "Existing products that match by ID or SKU will be updated. Products that do not exist will be skipped."
+msgstr "Існуючі продукти, які відповідають ідентифікаторам або товарній одиниці, будуть оновлюватися. Продукти, які не існують, будуть пропущені."
+
+#. translators: %s: helper screen url
+#: includes/admin/helper/class-wc-helper.php:1364
+msgid "<a href=\"%s\">Connect your store</a> to WooCommerce.com to receive extensions updates and support."
+msgstr "<a href=\"%s\">Підключіть свій магазин</a> до WooCommerce.com, щоб отримувати оновлення та підтримку розширень."
+
+#. translators: 1: subscriptions docs 2: subscriptions docs
+#: includes/admin/helper/class-wc-helper.php:300
+msgid "To receive updates and support for this extension, you need to <strong>purchase</strong> a new subscription or consolidate your extensions to one connected account by <strong><a href=\"%1$s\" title=\"Sharing Docs\">sharing</a> or <a href=\"%2$s\" title=\"Transferring Docs\">transferring</a></strong> this extension to this connected account."
+msgstr "Щоб отримувати оновлення та підтримку цього розширення, вам потрібно <strong>придбати</strong> нову передплату або об&#39;єднати розширення на одній з підключених облікових записів, <strong><a href=\"%1$s\" title=\"Обмін документами\">поділившись</a> чи <a href=\"%2$s\" title=\"Передавання документів\">передавши</a></strong> це розширення на цей підключений обліковий запис."
+
+#: includes/admin/helper/class-wc-helper-compat.php:159
+msgid "The WooCommerce Helper plugin is no longer needed. <a href=\"%s\">Manage subscriptions</a> from the extensions tab instead."
+msgstr "Плагін WuxCommerce Helper більше не потрібний. <a href=\"%s\">Управління підписками</a> замість вкладки розширень."
+
+#: includes/admin/class-wc-admin-webhooks.php:117
+msgid "Webhook topic unknown. Please select a valid topic."
+msgstr "Тема Webhook невідома. Будь ласка, виберіть правильну тему."
+
+#. translators: %s: webhook name
+#: includes/admin/class-wc-admin-webhooks-table-list.php:84
+msgid "Delete \"%s\" permanently"
+msgstr "Видалити \"%s\" назавжди"
+
+#: includes/admin/class-wc-admin-setup-wizard.php:1981
+msgid "Reasons you'll love Jetpack"
+msgstr "Причини, якими ви будете любити Jetpack"
+
+#: includes/admin/class-wc-admin-setup-wizard.php:1917
+msgid "Continue with Jetpack"
+msgstr "Продовжуйте з Jetpack"
+
+#: includes/admin/class-wc-admin-setup-wizard.php:1871
+msgid "payment setup"
+msgstr "установка платежу"
+
+#: includes/admin/class-wc-admin-setup-wizard.php:1867
+msgid "payment setup and automated taxes"
+msgstr "настройка платежу та автоматизовані податки"
+
+#: includes/admin/class-wc-admin-setup-wizard.php:1269
+msgid "Email address to receive payments"
+msgstr "Електронна адреса для отримання платежів"
+
+#: includes/admin/class-wc-admin-setup-wizard.php:1266
+msgid "Direct payments to email address:"
+msgstr "Прямі платежі на адресу електронної пошти:"
+
+#: includes/admin/class-wc-admin-setup-wizard.php:1258
+msgid "Accept payments without linking a PayPal account"
+msgstr "Приймайте платежі, не зв'язуючи обліковий запис PayPal"
+
+#. translators: %s: URL
+#: includes/admin/class-wc-admin-setup-wizard.php:1219
+msgid "Securely accept credit and debit cards with one low rate, no surprise fees (custom rates available). Sell online and in store and track sales and inventory in one place. <a href=\"%s\" target=\"_blank\">Learn more about Square</a>."
+msgstr "Безпечно приймати кредитні та дебетові картки з однією низькою ставкою, без сюрпризів (доступні спеціальні тарифи). Продавайте в Інтернеті, а також зберігайте та відстежуйте продажі та інвентаризацію в одному місці. <a href=\"%s\" target=\"_blank\">Дізнайтеся більше про площу</a> ."
+
+#. translators: %s: URL
+#: includes/admin/class-wc-admin-setup-wizard.php:1214
+msgid "Choose the payment that you want, pay now, pay later or slice it. No credit card numbers, no passwords, no worries. <a href=\"%s\" target=\"_blank\">Learn more about Klarna</a>."
+msgstr "Виберіть потрібний платіж, сплачуйте зараз, сплачуйте пізніше або відріжте його. Немає номерів кредитних карток, немає паролів, не хвилюйтеся. <a href=\"%s\" target=\"_blank\">Дізнайтеся більше про Кларну</a> ."
+
+#. translators: %s: URL
+#: includes/admin/class-wc-admin-setup-wizard.php:1209
+msgid "Full checkout experience with pay now, pay later and slice it. No credit card numbers, no passwords, no worries. <a href=\"%s\" target=\"_blank\">Learn more about Klarna</a>."
+msgstr "Повний порядок оплати з оплати зараз, платити пізніше і нарізати його. Немає номерів кредитних карток, немає паролів, не хвилюйтеся. <a href=\"%s\" target=\"_blank\">Дізнайтеся більше про Кларну</a> ."
+
+#. translators: %s: URL
+#: includes/admin/class-wc-admin-setup-wizard.php:1199
+msgid "Accept debit and credit cards in 135+ currencies, methods such as Alipay, and one-touch checkout with Apple Pay. <a href=\"%s\" target=\"_blank\">Learn more</a>."
+msgstr "Прийміть дебетові та кредитні картки в 135 і більше валютах, таких як Alipay, і одноразовий виїзд із Apple Pay. <a href=\"%s\" target=\"_blank\">Дізнайтеся більше</a> ."
+
+#: includes/admin/class-wc-admin-setup-wizard.php:479
+msgid "I will also be selling products or services in person."
+msgstr "Я також буду продавати продукти або послуги особисто."
+
+#: includes/admin/class-wc-admin-reports.php:74
+#: includes/admin/reports/class-wc-report-downloads.php:79
+msgid "Customer downloads"
+msgstr "Завантаження клієнтів"
+
+#: includes/admin/class-wc-admin-post-types.php:125
+#: includes/admin/class-wc-admin-post-types.php:146
+#: includes/admin/class-wc-admin-post-types.php:165
+msgid "Revision restored."
+msgstr "Редакція відновлена."
+
+#. translators: %s: Home URL
+#: includes/admin/class-wc-admin-permalink-settings.php:103
+msgid "If you like, you may enter custom structures for your product URLs here. For example, using <code>shop</code> would make your product links like <code>%sshop/sample-product/</code>. This setting affects product URLs only, not things such as product categories."
+msgstr "Якщо вам подобається, ви можете вводити власні структури URL-адрес своїх продуктів тут. Наприклад, використання <code>shop</code> призведе до того, що ваші посилання на продукт будуть схожі на <code>%sshop/sample-product/</code> . Цей параметр впливає лише на URL-адреси продукту, а не такі речі, як категорії продуктів."
+
 #: i18n/states/TZ.php:32
 msgid "Coast"
 msgstr "Узбережжя"
 
+#. translators: %s: post title
+#: includes/admin/class-wc-admin-duplicate-product.php:61
+msgid "Move &#8220;%s&#8221; to the Trash"
+msgstr "Перемістити &#8220;%s&#8221; у кошик"
+
+#: includes/admin/class-wc-admin-attributes.php:382
+msgid "Attributes let you define extra product data, such as size or color. You can use these attributes in the shop sidebar using the \"layered nav\" widgets."
+msgstr "Атрибути дозволяють визначати додаткові дані про продукт, такі як розмір або колір. Ви можете використовувати ці атрибути на бічній панелі магазину за допомогою віджетів &quot;шаруватих навігацій&quot;."
+
+#: includes/admin/class-wc-admin-attributes.php:241
+#: includes/admin/class-wc-admin-attributes.php:430
+msgid "Determines how this attribute's values are displayed."
+msgstr "Визначає, як відображаються значення цього атрибута."
+
+#: includes/admin/class-wc-admin-assets.php:169
+msgid "This product has produced sales and may be linked to existing orders. Are you sure you want to delete it?"
+msgstr "Цей продукт виробляє продажі та може бути пов'язаний з існуючими замовленнями. Ви впевнені, що хочете його видалити?"
+
+#. translators: %s: Product title
+#: includes/abstracts/abstract-wc-product.php:1790
+#: includes/class-wc-product-simple.php:66
+msgid "Read more about &ldquo;%s&rdquo;"
+msgstr "Детальніше про &ldquo;%s&rdquo;"
+
+#: i18n/states/TZ.php:43
+msgid "Simiyu"
+msgstr "Сімію"
+
+#: i18n/states/TZ.php:42
+msgid "Njombe"
+msgstr "Ньомбе"
+
+#: i18n/states/TZ.php:41
+msgid "Katavi"
+msgstr "Катаві"
+
+#: i18n/states/TZ.php:40
+msgid "Geita"
+msgstr "Гейта"
+
+#: i18n/states/TZ.php:39
+msgid "Manyara"
+msgstr "Маньяра"
+
+#: i18n/states/TZ.php:38
+msgid "Tanga"
+msgstr "Танга"
+
+#: i18n/states/TZ.php:37
+msgid "Tabora"
+msgstr "Табора"
+
+#: i18n/states/TZ.php:36
+msgid "Singida"
+msgstr "Сінгіда"
+
+#: i18n/states/TZ.php:35
+msgid "Shinyanga"
+msgstr "Шинянга"
+
+#: i18n/states/TZ.php:34
+msgid "Ruvuma"
+msgstr "Рувума"
+
+#: i18n/states/TZ.php:33
+msgid "Rukwa"
+msgstr "Руква"
+
 #: i18n/states/TZ.php:31
 msgid "Mwanza"
-msgstr "МванзаCity in Tanzania"
+msgstr "Мванза"
+
+#: i18n/states/TZ.php:30
+msgid "Mtwara"
+msgstr "Мтвара"
 
 #: i18n/states/TZ.php:29
 msgid "Morogoro"
-msgstr "МорогороCity in Tanzania"
+msgstr "Морогоро"
+
+#: i18n/states/TZ.php:28
+msgid "Zanzibar West"
+msgstr "Західний Занзібар"
 
 #: i18n/states/TZ.php:27
 msgid "Mbeya"
-msgstr "МбеяCity in Tanzania"
+msgstr "Мбея"
+
+#: i18n/states/TZ.php:26
+msgid "Mara"
+msgstr "Мара"
+
+#: i18n/states/TZ.php:25
+msgid "Lindi"
+msgstr "Лінді"
+
+#: i18n/states/TZ.php:24
+msgid "Zanzibar South"
+msgstr "Південний Занзібар"
+
+#: i18n/states/TZ.php:23
+msgid "Pemba South"
+msgstr "Пемба Південна"
 
 #: i18n/states/TZ.php:22
 msgid "Kilimanjaro"
-msgstr "Кіліманджароworld_ continents. kgm"
+msgstr "Кіліманджаро"
+
+#: i18n/states/TZ.php:21
+msgid "Kigoma"
+msgstr "Кігома"
+
+#: i18n/states/TZ.php:20
+msgid "Zanzibar North"
+msgstr "Північний Занзібар"
+
+#: i18n/states/TZ.php:19
+msgid "Pemba North"
+msgstr "Північна Пемба"
+
+#: i18n/states/TZ.php:18
+msgid "Kagera"
+msgstr "Кагера"
+
+#: i18n/states/TZ.php:17
+msgid "Iringa"
+msgstr "Ірінга"
 
 #: i18n/states/TZ.php:16
 msgid "Dodoma"
-msgstr "ДодомаCity in Tanzania"
+msgstr "Додома"
 
 #: i18n/states/TZ.php:15
 msgid "Dar es Salaam"
-msgstr "Дар- ес- СаламCity in Tanzania"
+msgstr "Дар-ес-Салаам"
+
+#: i18n/states/TZ.php:14
+msgid "Arusha"
+msgstr "Аруша"
+
+#: i18n/states/RO.php:56
+msgid "V&acirc;lcea"
+msgstr "Вилча"
+
+#: i18n/states/RO.php:54
+msgid "Timi&#537;"
+msgstr "Тіміш"
+
+#: i18n/states/RO.php:49
+msgid "S&#259;laj"
+msgstr "Салай"
+
+#: i18n/states/RO.php:46
+msgid "Neam&#539;"
+msgstr "Нямц"
+
+#: i18n/states/RO.php:45
+msgid "Mure&#537;"
+msgstr "Муреш"
+
+#: i18n/states/RO.php:44
+msgid "Mehedin&#539;i"
+msgstr "Мехедінц"
+
+#: i18n/states/RO.php:43
+msgid "Maramure&#537;"
+msgstr "Марамуреш"
+
+#: i18n/states/RO.php:41
+msgid "Ia&#537;i"
+msgstr "Ясі"
+
+#: i18n/states/RO.php:40
+msgid "Ialomi&#539;a"
+msgstr "Яломіца"
+
+#: i18n/states/RO.php:35
+msgid "Gala&#539;i"
+msgstr "Галаці"
+
+#: i18n/states/RO.php:33
+msgid "D&acirc;mbovi&#539;a"
+msgstr "Дамбовіца"
+
+#: i18n/states/RO.php:31
+msgid "Constan&#539;a"
+msgstr "Констанца"
+
+#: i18n/states/RO.php:29
+msgid "Cara&#537;-Severin"
+msgstr "Караш-Северін"
+
+#: i18n/states/RO.php:27
+msgid "Buz&#259;u"
+msgstr "Бузеу"
+
+#: i18n/states/RO.php:26
+msgid "Bucure&#537;ti"
+msgstr "Бухарест"
+
+#: i18n/states/RO.php:25
+msgid "Bra&#537;ov"
+msgstr "Брашов"
+
+#: i18n/states/RO.php:24
+msgid "Br&#259;ila"
+msgstr "Брейла"
+
+#: i18n/states/RO.php:23
+msgid "Boto&#537;ani"
+msgstr "Боташані"
+
+#: i18n/states/RO.php:22
+msgid "Bistri&#539;a-N&#259;s&#259;ud"
+msgstr "Бістріца-Несуд"
+
+#: i18n/states/RO.php:20
+msgid "Bac&#259;u"
+msgstr "Бакэу"
+
+#: i18n/states/RO.php:19
+msgid "Arge&#537;"
+msgstr "Аргеш"
+
+#: i18n/states/MD.php:54
+msgid "Ungheni"
+msgstr "Унгень"
+
+#: i18n/states/MD.php:53
+msgid "Telene&#537;ti"
+msgstr "Теленешт"
+
+#: i18n/states/MD.php:52
+msgid "Taraclia"
+msgstr "Тараклія"
+
+#: i18n/states/MD.php:51
+msgid "&#536;tefan Vod&#259;"
+msgstr "Стефан Вода"
+
+#: i18n/states/MD.php:50
+msgid "&#536;old&#259;ne&#537;ti"
+msgstr "Шолденешть"
+
+#: i18n/states/MD.php:49
+msgid "Str&#259;&#537;eni"
+msgstr "Страшени"
+
+#: i18n/states/MD.php:48
+msgid "Soroca"
+msgstr "Сорока"
+
+#: i18n/states/MD.php:47
+msgid "S&icirc;ngerei"
+msgstr "Сінджерей"
+
+#: i18n/states/MD.php:46
+msgid "R&icirc;&#537;cani"
+msgstr "Ришкань"
+
+#: i18n/states/MD.php:45
+msgid "Rezina"
+msgstr "Резіна"
+
+#: i18n/states/MD.php:44
+msgid "Orhei"
+msgstr "Орхей"
+
+#: i18n/states/MD.php:43
+msgid "Ocni&#539;a"
+msgstr "Окниця"
+
+#: i18n/states/MD.php:42
+msgid "Nisporeni"
+msgstr "Ніспорені"
+
+#: i18n/states/MD.php:41
+msgid "Leova"
+msgstr "Леова"
+
+#: i18n/states/MD.php:40
+msgid "Ialoveni"
+msgstr "Яловень"
+
+#: i18n/states/MD.php:39
+msgid "H&icirc;nce&#537;ti"
+msgstr "Хинчешть"
+
+#: i18n/states/MD.php:38
+msgid "Glodeni"
+msgstr "Глодені"
+
+#: i18n/states/MD.php:37
+msgid "UTA G&#259;g&#259;uzia"
+msgstr "Гагаузія"
+
+#: i18n/states/MD.php:36
+msgid "Flore&#537;ti"
+msgstr "Флорешті"
+
+#: i18n/states/MD.php:35
+msgid "F&#259;le&#537;ti"
+msgstr "Фалешть"
+
+#: i18n/states/MD.php:34
+msgid "Edine&#539;"
+msgstr "Едінец"
+
+#: i18n/states/MD.php:33
+msgid "Dub&#259;sari"
+msgstr "Дубоссари"
+
+#: i18n/states/MD.php:32
+msgid "Drochia"
+msgstr "Дрокія"
+
+#: i18n/states/MD.php:31
+msgid "Dondu&#537;eni"
+msgstr "Дондушень"
+
+#: i18n/states/MD.php:30
+msgid "Criuleni"
+msgstr "Крилуни"
+
+#: i18n/states/MD.php:29
+msgid "Cimi&#537;lia"
+msgstr "Симішлія"
+
+#: i18n/states/MD.php:28
+msgid "C&#259;u&#537;eni"
+msgstr "Каушені"
+
+#: i18n/states/MD.php:27 i18n/states/RO.php:28
+msgid "C&#259;l&#259;ra&#537;i"
+msgstr "Келерашь"
+
+#: i18n/states/MD.php:26
+msgid "Cantemir"
+msgstr "Кантемир"
+
+#: i18n/states/MD.php:25
+msgid "Cahul"
+msgstr "Кагул"
+
+#: i18n/states/MD.php:24
+msgid "Briceni"
+msgstr "Брічень"
+
+#: i18n/states/MD.php:23
+msgid "Basarabeasca"
+msgstr "Басарабеска"
+
+#: i18n/states/MD.php:22
+msgid "Anenii Noi"
+msgstr "Аненій Ной"
+
+#: i18n/states/MD.php:21
+msgid "B&#259;l&#539;i"
+msgstr "Бельці"
+
+#: i18n/states/MD.php:20
+msgid "Chi&#537;in&#259;u"
+msgstr "Кишинів"
 
 #: templates/myaccount/form-add-payment-method.php:58
 msgid "New payment methods can only be added during checkout. Please contact us if you require assistance."
@@ -1570,15 +2504,15 @@ msgstr "Деталі Вашого замовлення"
 msgid "Resend new order notification"
 msgstr "Повторити повідомлення про нове замовлення"
 
-#: includes/admin/class-wc-admin-post-types.php:156
-msgid "Order updated and sent."
-msgstr "Замовлення оновлене та надіслане."
-
 #. translators: %1$s: country name including the 'the' prefix, %2$s: shipping
 #. carrier name
 #: includes/admin/class-wc-admin-setup-wizard.php:869
 msgid "You're all set up to ship anywhere in %1$s, and outside of it. We recommend using <strong>live rates</strong> (which are powered by our WooCommerce Services plugin and Jetpack) to get accurate %2$s shipping prices to cover the cost of order fulfillment."
 msgstr "Ви всі налаштовані на доставку в будь-яку точку %1$s, а також за її межами. Ми рекомендуємо використовувати <strong>живі тарифи</strong> (які працюють від плагіна WooCommerce Services та Jetpack), щоб отримати точні ціни на відвантаження %2$s для покриття витрат на виконання замовлень."
+
+#: includes/admin/class-wc-admin-post-types.php:156
+msgid "Order updated and sent."
+msgstr "Замовлення оновлене та надіслане."
 
 #: includes/wc-template-functions.php:1310
 msgid "Relevance"
@@ -2133,6 +3067,10 @@ msgstr "PayPal e-mail:"
 #: includes/admin/class-wc-admin-setup-wizard.php:953
 msgid "<strong>Dimension unit</strong>—helps for accurate package selection."
 msgstr "<strong>Одиниця виміру</strong> - допомагає точно вибрати пакет."
+
+#: includes/admin/class-wc-admin-setup-wizard.php:1757
+msgid "Automated Taxes"
+msgstr " Автоматизовані податки"
 
 #: includes/admin/class-wc-admin-setup-wizard.php:933
 msgid "<strong>Weight unit</strong>—used to calculate shipping rates, and more."
@@ -3186,14 +4124,6 @@ msgstr "Версія %s вже <strong>доступна</strong>."
 msgid "To enable this update you need to <strong>activate</strong> this subscription."
 msgstr "Щоб увімкнути це оновлення, потрібно <strong>активувати</strong> цю підписку."
 
-#. translators: %1$s: helper url, %2$d: number of extensions
-#: includes/admin/helper/class-wc-helper.php:1397
-msgid "Note: You currently have <a href=\"%1$s\">%2$d paid extension</a> which should be updated first before updating WooCommerce."
-msgid_plural "Note: You currently have <a href=\"%1$s\">%2$d paid extensions</a> which should be updated first before updating WooCommerce."
-msgstr[0] "Примітка. В даний час у вас є <a href=\"%1$s\">планове розширення %2$d</a>, яке слід оновлювати перш ніж оновити WooCommerce."
-msgstr[1] "Примітка. В даний час у вас є <a href=\"%1$s\">планових розширення %2$d</a>, які слід оновлювати перш ніж оновити WooCommerce."
-msgstr[2] "Примітка. В даний час у вас є <a href=\"%1$s\">планових розширень %2$d</a>, які слід оновлювати перш ніж оновити WooCommerce."
-
 #: includes/admin/helper/class-wc-helper.php:578
 msgid "Authentication and subscription caches refreshed successfully."
 msgstr "Аутентифікація і кеш підписки оновлено успішно."
@@ -3201,6 +4131,14 @@ msgstr "Аутентифікація і кеш підписки оновлено
 #: includes/admin/helper/class-wc-helper.php:571
 msgid "You have successfully disconnected your store from WooCommerce.com"
 msgstr "Ви успішно відключили свій магазин від WooCommerce.com"
+
+#. translators: %1$s: helper url, %2$d: number of extensions
+#: includes/admin/helper/class-wc-helper.php:1397
+msgid "Note: You currently have <a href=\"%1$s\">%2$d paid extension</a> which should be updated first before updating WooCommerce."
+msgid_plural "Note: You currently have <a href=\"%1$s\">%2$d paid extensions</a> which should be updated first before updating WooCommerce."
+msgstr[0] "Примітка. В даний час у вас є <a href=\"%1$s\">планове розширення %2$d</a>, яке слід оновлювати перш ніж оновити WooCommerce."
+msgstr[1] "Примітка. В даний час у вас є <a href=\"%1$s\">планових розширення %2$d</a>, які слід оновлювати перш ніж оновити WooCommerce."
+msgstr[2] "Примітка. В даний час у вас є <a href=\"%1$s\">планових розширень %2$d</a>, які слід оновлювати перш ніж оновити WooCommerce."
 
 #: includes/admin/helper/class-wc-helper.php:564
 msgid "You have successfully connected your store to WooCommerce.com"
@@ -3686,6 +4624,10 @@ msgstr "Дякуємо за реєстрацію на %1$s. Ваш логін %2
 msgid "Hello %1$s (not %1$s? <a href=\"%2$s\">Log out</a>)"
 msgstr "Вітаємо, %1$s (не %1$s? <a href=\"%2$s\">Вийти</a>)"
 
+#: templates/myaccount/dashboard.php:37
+msgid "From your account dashboard you can view your <a href=\"%1$s\">recent orders</a>, manage your <a href=\"%2$s\">shipping and billing addresses</a>, and <a href=\"%3$s\">edit your password and account details</a>."
+msgstr "На інформаційній панелі облікового запису ви можете переглядати <a href=\"%1$s\">останні замовлення</a> , керувати вашими <a href=\"%2$s\">відправними та платіжними адресами</a> та <a href=\"%3$s\">редагувати свій пароль та реквізити</a> ."
+
 #: templates/cart/cart-totals.php:71
 msgid "(estimated for %s)"
 msgstr "(оцінено в %s)"
@@ -3858,6 +4800,11 @@ msgstr "Платіж від %1$s було отримано - Ідентифік�
 #: includes/gateways/paypal/class-wc-gateway-paypal.php:406
 msgid "Payment could not captured: %s"
 msgstr "Платіж неможливо отримати: %s"
+
+#. translators: %s: order ID.
+#: includes/gateways/paypal/includes/class-wc-gateway-paypal-ipn-handler.php:283
+msgid "Order #%s has been marked paid by PayPal IPN, but was previously cancelled. Admin handling required."
+msgstr "Замовлення № %s було позначено платним PayPal IPN, але його раніше було скасовано. Необхідна обробка адміністратора."
 
 #. translators: 1: Path to template file 2: Path to theme folder
 #: includes/emails/class-wc-email.php:941
@@ -7023,6 +7970,11 @@ msgstr "Повернутись до E-mails"
 #: includes/api/v1/class-wc-rest-webhooks-controller.php:621
 msgid "A friendly name for the webhook."
 msgstr "Зрозуміле ім'я вебхука."
+
+#: includes/api/class-wc-rest-webhooks-controller.php:152
+#: includes/api/v1/class-wc-rest-webhooks-controller.php:669
+msgid "Secret key used to generate a hash of the delivered webhook and provided in the request headers. This will default to a MD5 hash from the current user's ID|username if not provided."
+msgstr "Секретний ключ використовується для генерації хешу доставленого веб-хокета та надано у заголовках запиту. За замовчуванням це матиме хеш MD5 з ідентифікатора | імені користувача поточного, якщо не вказано."
 
 #: includes/api/class-wc-rest-order-refunds-controller.php:451
 #: includes/api/class-wc-rest-orders-controller.php:1189
@@ -18634,6 +19586,14 @@ msgstr "Роздільник десятків."
 #: includes/api/class-wc-rest-system-status-controller.php:465
 msgid "Thousand separator."
 msgstr "Роздільник тисяч."
+
+#. translators: %d: orders count
+#: includes/admin/list-tables/class-wc-admin-list-table-orders.php:692
+msgid "%d order status changed."
+msgid_plural "%d order statuses changed."
+msgstr[0] "Статус замовлення змінено."
+msgstr[1] "%s статуси замовлень змінено."
+msgstr[2] "%s статусів замовлень змінено."
 
 #: includes/admin/class-wc-admin-api-keys-table-list.php:48
 #: includes/admin/importers/class-wc-product-csv-importer-controller.php:470

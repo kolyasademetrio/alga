@@ -1,6 +1,6 @@
 jQuery(document).ready(function($) {
 
-    $('.headerMiddle__pointsLink').magnificPopup({
+    $('.headerMiddle__pointsLink, .advants__btnLink, .howitwork__btnLink').magnificPopup({
         type:'inline',
         removalDelay: 500,
         mainClass: 'mfp-fade popup_inline',
@@ -28,6 +28,43 @@ jQuery(document).ready(function($) {
             }
         }
     });
+
+    $('.headerTop__cartTotalLink').magnificPopup({
+        type:'inline',
+        removalDelay: 500,
+        mainClass: 'mfp-fade popup_inline',
+        showCloseBtn: true,
+        closeMarkup: '<div class="mfp-close">&times;</div>',
+        closeBtnInside: true,
+        closeOnContentClick: false,
+        closeOnBgClick: true,
+        alignTop: false,
+        fixedContentPos: true,
+        callbacks: {
+            open: function() {
+                var headerHeight = $('.header__top').innerHeight();
+                $('.mfp-content').css({
+                    'marginTop': headerHeight,
+                });
+
+                setHeightFormPopup();
+                $('button[name="update_cart"]').attr('disabled', false);
+
+            },
+            close: function() {
+
+            },
+            beforeOpen: function() {
+                var $triggerEl = $(this.st.el),
+                    newClass = 'cart__popup';
+                this.st.mainClass = this.st.mainClass + ' ' + newClass;
+            }
+        }
+    });
+
+
+    niceScrollInitFormPopup();
+
 
     $('.headerMiddle__infoFeedback').magnificPopup({
         type:'inline',
@@ -153,7 +190,7 @@ jQuery(document).ready(function($) {
         arrows: true,
         centerMode: true,
         focusOnSelect: true,
-        autoplay: false,
+        autoplay: true,
         centerPadding: 0,
     });
 
@@ -662,6 +699,84 @@ jQuery(document).ready(function($) {
             change: function(){}
         },
     });
+
+    /* попап Видеоотзыва при клике на самом товаре в Сетке */
+    $('.good__video').magnificPopup({
+        type: 'iframe',
+        gallery: {enabled:false},
+        iframe: {
+            markup: '<div class="mfp-iframe-scaler">' +
+            '<div class="mfp-close"></div>' +
+            '<iframe width="854" height="480" class="mfp-iframe" frameborder="0" allowfullscreen></iframe>' +
+            '</div>' +
+            '<div class="mfp-bottom-bar">' +
+            '<div class="mfp-title username"></div>' +
+            '<div class="mfp-subtitle usermessage"></div>' +
+            '</div>',
+            patterns: {
+                youtube: {
+                    index: 'youtube.com/',
+                    id: function(url) {
+                        var m = url.match(/[\\?\\&]v=([^\\?\\&]+)/);
+                        if ( !m || !m[1] ) return null;
+                        return m[1];
+                    },
+                    src: '//www.youtube.com/embed/%id%?autoplay=1'
+                }
+            },
+            srcAction: 'iframe_src',
+        },
+        callbacks: {
+            open: function() {
+                var headerHeight = $('.header__top').innerHeight();
+                $('.mfp-content').css({
+                    'marginTop': headerHeight,
+                });
+            },
+            close: function() {
+
+            },
+            beforeOpen: function() {
+                var $triggerEl = $(this.st.el),
+                    newClass = 'feedback__movie__popup good__feedback__movie__popup';
+
+                this.st.mainClass = this.st.mainClass + ' ' + newClass;
+
+                this.st.image.markup = this.st.image.markup.replace('mfp-figure', 'mfp-figure mfp-with-anim');
+            },
+            elementParse: function(item) {},
+            markupParse: function(template, values, item) {},
+            change: function(){}
+        },
+    });
+
+
+    if ( $('#shipping_date').length ) {
+        $.datetimepicker.setLocale('ru');
+        $('#shipping_date').datetimepicker({
+            i18n:{
+                ru:{
+                    months:[
+                        'Январь','Февраль','Март','Апрель',
+                        'Май','Июнь','Июль','Август',
+                        'Сентябрь','Октябрь','Ноябрь','Декабрь',
+                    ],
+                    dayOfWeek:[
+                        "Пн", "Вт", "Ср", "Чт",
+                        "Пт", "Сб", "Вс",
+                    ]
+                }
+            },
+            dayOfWeekStart: 1,
+            onGenerate:function( ct ){
+                jQuery(this).find('.xdsoft_date.xdsoft_weekend')
+                    .addClass('xdsoft_disabled');
+            },
+        });
+    }
+
+
+
 
 
     /*$('.button').magnificPopup({

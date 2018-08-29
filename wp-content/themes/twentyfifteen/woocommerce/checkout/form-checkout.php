@@ -39,22 +39,33 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
         <?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
 
         <div class="col2-set" id="customer_details">
-            <div class="col-1">
+            <div class="col-1 checkout__wrapper">
                 <ul class="checkout__steps__tabs">
                     <li>
-                        <a href="" class="active">
+                        <span class="checkout__link first__step active">
                             <span class="number">1</span>
                             <span>Личные данные</span>
-                        </a>
+                        </span>
                     </li>
                     <li>
-                        <a href="">
-                            <span class="number">2</span>
+                        <span class="checkout__link ">
+                           <span class="number">2</span>
                             <span>Информация о доставке</span>
-                        </a>
+                        </span>
                     </li>
                 </ul>
                 <?php do_action( 'woocommerce_checkout_billing' ); ?>
+
+                <?php if ( WC()->cart->needs_shipping() && WC()->cart->show_shipping() ) : ?>
+
+                    <?php do_action( 'woocommerce_review_order_before_shipping' ); ?>
+
+                    <?php //wc_cart_totals_shipping_html(); ?>
+                    <?php my_wc_cart_totals_shipping_html(); ?>
+
+                    <?php do_action( 'woocommerce_review_order_after_shipping' ); ?>
+
+                <?php endif; ?>
             </div>
 
             <div class="col-2 woo__shipping__col">

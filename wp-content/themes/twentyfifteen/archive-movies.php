@@ -58,8 +58,8 @@ get_header(); ?>
         <div class="col-xs-12">
             <?php
             the_posts_pagination( array(
-                'prev_text'          => __( 'Previous page', 'twentyfifteen' ),
-                'next_text'          => __( 'Next page', 'twentyfifteen' ),
+                'prev_text'          => __( '←', 'twentyfifteen' ),
+                'next_text'          => __( '→', 'twentyfifteen' ),
                 /*'prev_text'          => __( '❬', 'twentyfifteen' ),
                 'next_text'          => __( '❭', 'twentyfifteen' ),*/
                 'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentyfifteen' ) . ' </span>',

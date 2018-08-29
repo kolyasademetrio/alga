@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WooCommerce - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2018-07-31 09:54:07+0000\n"
+"PO-Revision-Date: 2018-08-27 02:17:02+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -37,6 +37,10 @@ msgstr "此操作无法撤销。确认您要抹除所选的订单的个人信息
 #: includes/api/class-wc-rest-product-variations-controller.php:410
 msgid "Cannot set attributes due to invalid parent product."
 msgstr "由于父产品无效而不能设置属性。"
+
+#: includes/admin/views/html-notice-wootenberg.php:19
+msgid "Activate the Gutenberg Products Block"
+msgstr "激活Gutenberg产品块"
 
 #. translators: %d: shipping package number
 #: includes/wc-cart-functions.php:228

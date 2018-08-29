@@ -144,7 +144,16 @@ if ( post_password_required() ) {
                     ?>
                 </div class=td"">
                 <div class="td terms">
-                    Условия доставки
+                    <div class="good_shipping_terms">
+                        <?php if ( !empty(trim(get_field('good_shipping_img', 'options'))) ) : ?>
+                            <div class="good_shipping_imgWrap">
+                                <img src="<?php echo get_field('good_shipping_img', 'options') ?>" alt="">
+                            </div>
+                        <?php endif; ?>
+                        <div class="good_shipping_text">
+                            <?php echo get_field('good_shipping_text', 'options'); ?>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="tr">

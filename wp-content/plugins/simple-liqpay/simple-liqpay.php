@@ -200,9 +200,10 @@ function woocommerce_init() {
 
         function process_payment($order_id) {
             $order = new WC_Order($order_id);
+
             return array(
                 'result'   => 'success',
-				'redirect' => add_query_arg('order', $order->id, add_query_arg('key', $order->order_key, get_permalink(wc_get_page_id('pay'))))
+				'redirect' => add_query_arg('order', $order->get_id(), add_query_arg('key', $order->order_key, get_permalink(wc_get_page_id('pay'))))
             );
         }
 

@@ -124,7 +124,18 @@ if ( woocommerce_product_loop() ) {
                 <div class="products__contentHeaderFilter">
                     <span class="products__contentHeaderFilterText">Сортировать по: Цене</span>
                     <span class="products__contentHeaderFilterLinks">
-                        <?php woocommerce_catalog_ordering(); ?>
+                        <?php //woocommerce_catalog_ordering(); ?>
+                        <?php global $wp; ?>
+                        <ul name="orderby" class="orderby">
+                            <li>
+                                <a href="<?php echo home_url($wp->request); ?>/?orderby=price"></a>
+                            </li>
+                            <li>
+                                <a href="<?php echo home_url($wp->request); ?>/?orderby=price-desc"></a>
+                            </li>
+                        </ul>
+
+
                     </span>
                 </div>
             </div>

@@ -13,7 +13,14 @@
 		</div><!-- site__main -->
 	</div><!-- content__main -->
 
-	<footer id="colophon" class="footer" role="contentinfo">
+
+	<?php
+	if ( !empty(trim(get_field('footer_bg', 'options'))) && is_front_page() ) :
+		$footer_bg_url = get_field('footer_bg', 'options');
+		$footer_bg_styles = 'background: url('.$footer_bg_url.') no-repeat center top;-webkit-background-size: 100% 100%;background-size: 100% 100%;';
+	endif;
+	?>
+	<footer id="colophon" class="footer" role="contentinfo" style="<?php echo $footer_bg_styles; ?>">
 		<div class="container footer__container">
 			<div class="row footer__row">
 				<div class="col-xs-12 footer__col">
