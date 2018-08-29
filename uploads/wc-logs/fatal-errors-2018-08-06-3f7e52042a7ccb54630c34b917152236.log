@@ -1,0 +1,6 @@
+2018-08-06T12:16:02+00:00 CRITICAL Call to a member function get_regular_price() on string
+
+2018-08-06T13:09:40+00:00 CRITICAL Call to undefined method WC_Product_Simple::get_available_variations()
+
+2018-08-06T13:28:46+00:00 CRITICAL Call to a member function get_price_html() on null
+

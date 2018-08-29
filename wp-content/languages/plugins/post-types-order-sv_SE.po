@@ -1,0 +1,200 @@
+# Translation of Plugins - Post Types Order - Stable (latest release) in Swedish
+# This file is distributed under the same license as the Plugins - Post Types Order - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2017-11-08 09:01:17+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: sv_SE\n"
+"Project-Id-Version: Plugins - Post Types Order - Stable (latest release)\n"
+
+#: include/class.options.php:137
+msgid "Use query ASC / DESC parameter "
+msgstr "Använd parametern ASC/DESC i ditt query "
+
+#: include/class.options.php:141
+msgid "If the query include an Ascending or Descending order paramether, use that. If query order is set to DESC the order will be reversed."
+msgstr "Om databasfrågan innehåller en parameter för stigande eller fallande ordning (Ascending/Descending) används denna. Om ordningen är angiven som DESC kommer ordningen att vara den omvända."
+
+#: include/class.functions.php:99
+msgid "Check out"
+msgstr "Kolla in"
+
+#: include/class.functions.php:99
+msgid "the easy way to completely hide your WordPress core files, theme and plugins"
+msgstr "det enkla sättet att helt dölja dina WordPress systemfiler, teman och tillägg"
+
+#: include/class.options.php:146
+msgid "Archive Drag&Drop "
+msgstr "Dra och Släpp i arkiv"
+
+#: include/class.options.php:150
+msgid "Allow sortable drag & drop functionality within default WordPress post type archive. Admin Sort need to be active."
+msgstr "Tillåt funktion för ”dra och släpp”-sortering inom standard WordPress posttyper. Adminsortering måste vara aktivt."
+
+#: include/class.cpto.php:207
+msgid "make the configuration and save"
+msgstr "skapa konfigurationen och spara"
+
+#: include/class.cpto.php:535
+msgid "Update"
+msgstr "Uppdatera"
+
+#: include/class.options.php:105
+msgid "Subscriber"
+msgstr "Prenumerant"
+
+#: include/class.options.php:106
+msgid "Contributor"
+msgstr "Medarbetare"
+
+#: include/class.options.php:94
+msgid "Show"
+msgstr "Visa"
+
+#: include/class.options.php:121
+msgid "Additional Description and Examples"
+msgstr "Ytterligare beskrivning och exempel"
+
+#: include/class.options.php:159
+msgid "code"
+msgstr "kod"
+
+#: include/class.options.php:95
+msgid "Hide"
+msgstr "Dölj"
+
+#: include/class.options.php:128
+msgid "Admin Sort"
+msgstr "Adminsortering"
+
+#: include/class.options.php:155
+msgid "Next / Previous Apply"
+msgstr "Tillämpa på Nästa / Föregående"
+
+#. Plugin Name of the plugin/theme
+msgid "Post Types Order"
+msgstr "Post Types Order"
+
+#. #-#-#-#-#  post-types-order-code.pot (Post Types Order 1.9.3.9)  #-#-#-#-#
+#. Plugin URI of the plugin/theme
+#. #-#-#-#-#  post-types-order-code.pot (Post Types Order 1.9.3.9)  #-#-#-#-#
+#. Author URI of the plugin/theme
+msgid "http://www.nsp-code.com"
+msgstr "http://www.nsp-code.com"
+
+#. Author of the plugin/theme
+msgid "Nsp Code"
+msgstr "Nsp Code"
+
+#: include/class.cpto.php:556
+msgid "Items Order Updated"
+msgstr "Sorteringen är uppdaterad"
+
+#: include/class.functions.php:96
+msgid "Did you find this plugin useful? Please support our work by purchasing the advanced version or write an article about this plugin in your blog with a link to our site"
+msgstr "Hade du nytta av detta tillägg? Vänligen stöd vårt arbete genom att köpa den avancerade versionen eller skriv en artikel om detta tillägg i din blogg med en länk till vår webbplats"
+
+#: include/class.functions.php:97
+msgid "Did you know there is available an Advanced version of this plug-in?"
+msgstr "Visste du att det finns en avancerad version av detta tillägg?"
+
+#: include/class.functions.php:97
+msgid "Read more"
+msgstr "Läs mer"
+
+#: include/class.functions.php:98
+msgid "Check our"
+msgstr "Kolla vårt"
+
+#: include/class.functions.php:98
+msgid "plugin which allow to custom sort categories and custom taxonomies terms"
+msgstr "tillägg som gör det möjligt att sortera anpassade kategorier och anpassade taxonomier"
+
+#: include/class.options.php:57
+msgid "General Settings"
+msgstr "Allmänna inställningar"
+
+#: include/class.options.php:102
+msgid "Minimum Level to use this plugin"
+msgstr "Miniminivå för att använda denna plugin"
+
+#: include/class.options.php:107
+msgid "Author"
+msgstr "Författare"
+
+#: include/class.options.php:109
+msgid "Administrator"
+msgstr "Administratör"
+
+#: include/class.options.php:116
+msgid "Auto Sort"
+msgstr "Automatisk sortering"
+
+#: include/class.options.php:118
+msgid "If checked, the plug-in automatically update the WordPress queries to use the new order (<b>No code update is necessarily</b>)"
+msgstr "Om markerad så kommer tillägget automatiskt att uppdatera WordPress databasfrågor för att använda den nya sorteringen (<b>Ingen koduppdatering är nödvändig</b>)"
+
+#: include/class.options.php:119
+msgid "If only certain queries need to use the custom sort, keep this unchecked and include 'orderby' => 'menu_order' into query parameters"
+msgstr "Om bara vissa frågor behöver använda den anpassade sorteringsordningen, håll denna omarkerad och inkludera 'orderby' => 'menu_order' i frågeparametrarna"
+
+#: include/class.options.php:159
+msgid "This can also be controlled through"
+msgstr "Detta kan också kontrolleras genom"
+
+#: include/class.options.php:167
+msgid "Save Settings"
+msgstr "Spara inställningar"
+
+#: include/class.cpto.php:207
+msgid "Post Types Order must be configured. Please go to"
+msgstr "Post ordertyper måste konfigureras. Gå till"
+
+#: include/class.cpto.php:207
+msgid "Settings Page"
+msgstr "Inställningssida"
+
+#: include/class.functions.php:134 include/class.functions.php:213
+msgid "Use commas instead of %s to separate excluded terms."
+msgstr "Använd kommatecken istället för %s för att separera uteslutna termer."
+
+#: include/class.options.php:159
+msgid "Apply the sort on Next / Previous site-wide navigation."
+msgstr "Applicera sorteringen på nästa/föregående i navigering över hela webbplatsen."
+
+#: include/class.options.php:132
+msgid "To affect the admin interface, to see the post types per your new sort, this need to be checked"
+msgstr "För att påverka admin-gränssnittet så att inläggstyperna visas enligt din nya sortering så behöver denna vara markerad"
+
+#: include/class.options.php:108
+msgid "Editor"
+msgstr "Redigerare"
+
+#: include/class.options.php:67
+msgid "Show / Hide re-order interface"
+msgstr "Visa/dölj sorteringsgränssnittet"
+
+#: include/class.options.php:40
+msgid "Settings Saved"
+msgstr "Inställningar sparade"
+
+#: include/class.cpto.php:522
+msgid "This plugin can't work without javascript, because it's use drag and drop and AJAX."
+msgstr "Detta tillägg kan inte fungera utan JavaScript, eftersom den använder dra och släpp och AJAX."
+
+#. Description of the plugin/theme
+msgid "Posts Order and Post Types Objects Order using a Drag and Drop Sortable javascript capability"
+msgstr "Inläggsordning och posttyp-objektsordning med hjälp av ”dra och släpp”-sortering"
+
+#: include/class.cpto.php:498 include/class.cpto.php:500
+#: include/class.cpto.php:503 include/class.cpto.php:514
+msgid "Re-Order"
+msgstr "Ordna om"
+
+#: include/class.options.php:63
+msgid "General"
+msgstr "Allmänt"

@@ -1,0 +1,9 @@
+/* ------------------------>>> order_data <<<------------------------------------------------- */
+#order_data .order_data_column h3,
+#order_data .order_data_column div.address,
+#order_data .order_data_column div.edit_address {
+    display: none !important;
+}
+
+
+/* ------------------------>>> order_data End <<<------------------------------------------------- */
