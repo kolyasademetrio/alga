@@ -1,8 +1,0 @@
-2018-08-01T08:44:59+00:00 CRITICAL Cannot use object of type WP_Post as array
-
-2018-08-01T08:53:22+00:00 CRITICAL Cannot redeclare lw_woocommerce_gpf_title() (previously declared in /home/seotmdev/seocms.com.ua/alga/wp-content/themes/twentyfifteen/templates/custom-home.php:104)
-
-2018-08-01T09:54:49+00:00 CRITICAL Call to a member function is_purchasable() on null
-
-2018-08-01T09:55:04+00:00 CRITICAL Call to a member function is_purchasable() on null
-
